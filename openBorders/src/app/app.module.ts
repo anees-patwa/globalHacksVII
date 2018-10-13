@@ -11,7 +11,7 @@ import { CandidateInfoPage } from '../pages/candidate-info/candidate-info';
 
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
-
+import { CompanyListPage } from '../pages/company-list/company-list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -24,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CandidateListPage,
     CandidateInfoPage,
     CompanyloginPage,
-    PersonloginPage
+    PersonloginPage,
+    CompanyListPage
   ],
   imports: [
     BrowserModule,
@@ -39,12 +40,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CandidateListPage,
     CandidateInfoPage,
     CompanyloginPage,
-    PersonloginPage
+    PersonloginPage,
+    CompanyListPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
