@@ -5,9 +5,23 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
 
+
+
+//add this import statement to any component needing firebase
+import * as firebase from 'firebase';
+
+const config = {
+  apiKey: "AIzaSyCQX9BOrQGk-z3fQusbzqff5XOLTETAz4o",
+  authDomain: "openborder-68e90.firebaseapp.com",
+  databaseURL: "https://openborder-68e90.firebaseio.com",
+  projectId: "openborder-68e90",
+  storageBucket: "openborder-68e90.appspot.com",
+  messagingSenderId: "471400892590",
+}
 
 @Component({
   templateUrl: 'app.html'
@@ -17,18 +31,19 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
+      { title: 'Candidates', component: CandidateListPage},
       { title: 'CompanyLogin', component: CompanyloginPage },
       { title: 'PersonLogin', component: PersonloginPage },
-
     ];
 
   }
@@ -40,6 +55,8 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
+    firebase.initializeApp(config);
   }
 
   openPage(page) {
