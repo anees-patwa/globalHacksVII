@@ -20,22 +20,22 @@
 
 
 <ion-content padding>
-  <ion-card (click)="getUserDetail()">
+  <ion-card *ngFor="let candidate of candidates" (click)="getUserDetail(candidate)">
     <ion-item>
-      <h2>Candidate 1</h2>
-      <ion-card-content>Testing</ion-card-content>
+      <h2>Candidate {{candidate.id}}</h2>
+      <ion-card-content>Preferred Language: {{candidate.preferredLang}}</ion-card-content>
       <ion-row>
         <ion-col>
           <ion-icon name="globe"></ion-icon>
-          <span>Origin</span>
+          <span>{{candidate.origin}}</span>
         </ion-col>
         <ion-col>
           <ion-icon name="ribbon"></ion-icon>
-          <span>Skills</span>
+          <span>{{candidate.skills.length}} Skills</span>
         </ion-col>
         <ion-col>
           <ion-icon name="chatbubbles"></ion-icon>
-          <span>Languages</span>
+          <span>{{candidate.languages.length + 1}} Languages</span>
         </ion-col>
       </ion-row>
     </ion-item>

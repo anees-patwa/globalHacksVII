@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 
 
 @Component({
@@ -10,27 +10,27 @@ import * as firebase from 'firebase';
 })
 export class HomePage {
 
-  ref = firebase.database().ref();
+  //ref = firebase.database().ref();
 
-  content = [];
+  //content = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.ref.on('value', resp => {
-      this.content = snapshotToArray(resp);
-      console.log(this.content);
-    }
-    );
+    // this.ref.on('value', resp => {
+    //   this.content = snapshotToArray(resp);
+    //   console.log(this.content);
+    // }
+    // );
   }
 
 }
 
-export const snapshotToArray = snapshot => {
-  let returnArr = [];
+// export const snapshotToArray = snapshot => {
+//   let returnArr = [];
 
-  snapshot.forEach(childSnapshot => {
-    let item = childSnapshot.val();
-    //item.key = childSnapshot.key;
-    returnArr.push(item);
-  });
+//   snapshot.forEach(childSnapshot => {
+//     let item = childSnapshot.val();
+//     //item.key = childSnapshot.key;
+//     returnArr.push(item);
+//   });
 
-  return returnArr;
-};
+//   return returnArr;
+// };
