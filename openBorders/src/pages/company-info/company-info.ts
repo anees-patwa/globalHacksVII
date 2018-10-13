@@ -15,11 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CompanyInfoPage {
 
+  company;
+  email;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.company = navParams.data;
+    console.log(this.company);
+    this.email = "mailto::" + this.company.email;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CompanyInfoPage');
+    
   }
 
 }

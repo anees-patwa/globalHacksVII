@@ -17,24 +17,24 @@
 
 
 <ion-content padding>
-  <ion-card (click)="getCompanyDetail()" *ngFor="let company of companies">
+  <ion-card (click)="getCompanyDetail(company)" *ngFor="let company of companies">
     <ion-item>
-      <h2>Company 1</h2>
-      <ion-card-content>Testing</ion-card-content>
+      <h2>Company {{company.id}}</h2>
+      <ion-card-content></ion-card-content>
       <ion-row>
         <ion-col>
           <ion-icon name="chatbubbles"></ion-icon>
-          <span>Languages</span>
+          <span>{{company.languages? company.languages.length: 0}} Languages</span>
         </ion-col>
         <ion-col>
-          <ion-icon name="briefcase"></ion-icon>
-          <span>Industry</span>
+          <ion-icon name="globe"></ion-icon>
+          <span>{{company.location}}</span>
         </ion-col>
-      </ion-row>
       <ion-col>
         <ion-icon name="document"></ion-icon>
-        <span>Visas</span>
+        <span>{{company.visas.length}} Visas</span>
       </ion-col>
+      </ion-row>
     </ion-item>
   </ion-card>
 </ion-content>

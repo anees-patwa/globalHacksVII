@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the CandidateInfoPage page.
+ * Generated class for the MessagingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,24 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-candidate-info',
-  templateUrl: 'candidate-info.html',
+  selector: 'page-messaging',
+  templateUrl: 'messaging.html',
 })
-export class CandidateInfoPage {
-
-  candidate;
+export class MessagingPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    //console.log(navParams);
-    this.candidate = navParams.data;
   }
 
   ionViewDidLoad() {
-
-  }
-
-  contactCandidate() {
-    console.log('contactCandidate clicked');
+    console.log('ionViewDidLoad MessagingPage');
   }
 
 }

@@ -17,6 +17,7 @@ export class HomePage {
     public popoverCtrl: PopoverController
   ){}
 
+<<<<<<< HEAD
   presentPopover(myEvent) {
       let popover = this.popoverCtrl.create(PopoverPage);
       popover.present({
@@ -26,6 +27,9 @@ export class HomePage {
 
   logIn(){
     this.navCtrl.push(PersonSignupPage);
+=======
+
+>>>>>>> 4a6c3cc0184a9693b0cc19fd9b6e77b1e07fccbe
   }
 
 }
