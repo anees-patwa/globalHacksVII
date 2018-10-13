@@ -9,6 +9,8 @@ import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
 import { MessagingPage } from '../pages/messaging/messaging';
+import { CompanyListPage } from '../pages/company-list/company-list';
+import { PersonSignupPage } from '../pages/person-signup/person-signup';
 
 
 
@@ -45,7 +47,12 @@ export class MyApp {
       { title: 'Candidates', component: CandidateListPage},
       { title: 'Company Login', component: CompanyloginPage },
       { title: 'Person Login', component: PersonloginPage },
-      { title: 'Messages', component: MessagingPage}
+      { title: 'Messages', component: MessagingPage},
+      { title: 'Candidates', component: CandidateListPage },
+      { title: 'CompanyLogin', component: CompanyloginPage },
+      { title: 'PersonLogin', component: PersonloginPage },
+      { title: 'Companies', component: CompanyListPage },
+      { title: "Person Login Page", component: PersonSignupPage}
     ];
 
   }

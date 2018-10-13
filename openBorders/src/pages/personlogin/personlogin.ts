@@ -20,15 +20,21 @@ export class PersonloginPage {
   }
 
 
-  loginPerson() {
+  signupPerson() {
     let email = this.form.email;
     let password = this.form.password;
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       // ...
+      console.log(firebase.auth().currentuser);
+      
     });
+
+    firebase.auth().currentUser.displayName = "person";
+
+
 
     this.navCtrl.setRoot(HomePage);
   }
