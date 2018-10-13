@@ -49,14 +49,12 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Candidates', component: CandidateListPage },
-      { title: 'Company Login', component: CompanyloginPage },
-      { title: 'Person Login', component: PersonloginPage },
-      { title: 'Messages', component: MessagingPage }
+      { title: 'Messages', component: MessagingPage },
       { title: 'CompanySignup', component: CompanyloginPage },
       { title: 'PersonSignup', component: PersonloginPage },
 
       { title: 'HomeTemplate', component: HomeTempPage },
-      { title: 'FilterCandidate', component: FilterCandidatePage }
+      { title: 'FilterCandidate', component: FilterCandidatePage },
 
       { title: 'Companies', component: CompanyListPage },
 

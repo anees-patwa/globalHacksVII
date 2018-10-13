@@ -41,7 +41,7 @@ import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate'
     CompanyListPage,
     MessagingPage,
     CompanySignupPage,
-    PersonSignupPage
+    PersonSignupPage,
     HomeTempPage,
     FilterCandidatePage,
   ],
@@ -62,7 +62,7 @@ import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate'
     CompanyListPage,
     MessagingPage,
     CompanySignupPage,
-    PersonSignupPage
+    PersonSignupPage,
     HomeTempPage,
     FilterCandidatePage,
   ],
