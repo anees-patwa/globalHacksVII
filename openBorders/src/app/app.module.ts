@@ -11,24 +11,29 @@ import { CandidateInfoPage } from '../pages/candidate-info/candidate-info';
 
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
-
+import { CompanyListPage } from '../pages/company-list/company-list';
+import { CompanyInfoPage } from '../pages/company-info/company-info';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomeTempPage } from '../pages/home-temp/home-temp';
 import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
+import { PopoverPage } from '../pages/popover/popover';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
+    CompanyInfoPage,
     CandidateListPage,
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
     HomeTempPage,
-    FilterCandidatePage
+    FilterCandidatePage,
+    CompanyListPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -39,17 +44,20 @@ import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate'
     MyApp,
     HomePage,
     ListPage,
+    CompanyInfoPage,
     CandidateListPage,
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
     HomeTempPage,
-    FilterCandidatePage
+    FilterCandidatePage,
+    CompanyListPage,
+    PopoverPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

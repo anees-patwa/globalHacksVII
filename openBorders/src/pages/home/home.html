@@ -4,28 +4,29 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+
+    <button ion-button (click)="logIn()" id = "log" top right>
+      Log-In
+    </button>
+
+
+    <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="signup">Sign-Up</ion-icon>
+    </button>
   </ion-navbar>
 
   <ion-toolbar>
     <ion-segment [(ngModel)]="icons" color="secondary">
       <ion-segment-button value="Home">
-        <ion-icon name="Home"></ion-icon>
+        <ion-icon name="Home">Home</ion-icon>
       </ion-segment-button>
       <ion-segment-button value="About">
-        <ion-icon name="About"></ion-icon>
+        <ion-icon name="About">About</ion-icon>
       </ion-segment-button>
       <ion-segment-button value="Contact">
-        <ion-icon name="Contact"></ion-icon>
+        <ion-icon name="Contact">Contact</ion-icon>
       </ion-segment-button>
     </ion-segment>
-
-    <button ion-button-right (click)="logIn">
-      button
-    </button>
-
-    <button ion-button-right (click)="signUp">
-      buttonTwo
-    </button>
   </ion-toolbar>
 </ion-header>
 
