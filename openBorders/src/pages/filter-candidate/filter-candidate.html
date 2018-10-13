@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Open Board</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>City</ion-label>
+    <ion-select [(ngModel)]="filterCand.city" interface = "popover">
+      <ion-option value="Seattle">Seattle</ion-option>
+      <ion-option value="St. Louis">St. Louis</ion-option>
+      <ion-option value="Chicago">Chicago</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <!--Industry -->
+  <ion-item>
+    <ion-label>State</ion-label>
+    <ion-select [(ngModel)]="filterCand.state" interface = "popover">
+      <ion-option value="WA">Washington</ion-option>
+      <ion-option value="MO">Missouri</ion-option>
+      <ion-option value="IL">Illinois</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Years of Experience-->
+  <ion-item>
+    <ion-input name ="filterCand.zip" type="number" placeholder="Zip"></ion-input>
+  </ion-item>
+
+  <!-- Language -->
+  <ion-item>
+    <ion-label>Language</ion-label>
+    <ion-select [(ngModel)]="filterCand.language" interface = "popover">
+      <ion-option value="EN">English</ion-option>
+      <ion-option value="CH">Chinese (Simplified)</ion-option>
+      <ion-option value="SP">Spanish</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <button ion-button full (click)="goTo()">Submit</button>
+</ion-content>
