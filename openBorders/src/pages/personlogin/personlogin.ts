@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the PersonloginPage page.
  *
@@ -28,6 +29,8 @@ export class PersonloginPage {
       var errorMessage = error.message;
       // ...
     });
+
+    this.navCtrl.setRoot(HomePage);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonloginPage');
