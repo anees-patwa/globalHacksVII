@@ -16,6 +16,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomeTempPage } from '../pages/home-temp/home-temp';
+import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeTempPage } from '../pages/home-temp/home-temp';
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
-    HomeTempPage
+    HomeTempPage,
+    FilterCandidatePage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { HomeTempPage } from '../pages/home-temp/home-temp';
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
-    HomeTempPage
+    HomeTempPage,
+    FilterCandidatePage
   ],
   providers: [
     StatusBar,

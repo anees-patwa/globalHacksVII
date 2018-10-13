@@ -9,33 +9,33 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label>Authorization</ion-label>
-    <ion-select [(ngModel)]="filter.visa" interface = "popover">
-      <ion-option value="H1B">H1B</ion-option>
-      <ion-option value="H2B">H2B</ion-option>
-      <ion-option value="H2A">H2A</ion-option>
+    <ion-label>City</ion-label>
+    <ion-select [(ngModel)]="filterCand.city" interface = "popover">
+      <ion-option value="Seattle">Seattle</ion-option>
+      <ion-option value="St. Louis">St. Louis</ion-option>
+      <ion-option value="Chicago">Chicago</ion-option>
     </ion-select>
   </ion-item>
 
   <!--Industry -->
   <ion-item>
-    <ion-label>Industry</ion-label>
-    <ion-select [(ngModel)]="filter.industry" interface = "popover">
-      <ion-option value="Technology">Technology</ion-option>
-      <ion-option value="Customer Service">Customer Service</ion-option>
-      <ion-option value="Commodities">Commodities</ion-option>
+    <ion-label>State</ion-label>
+    <ion-select [(ngModel)]="filterCand.state" interface = "popover">
+      <ion-option value="WA">Washington</ion-option>
+      <ion-option value="MO">Missouri</ion-option>
+      <ion-option value="IL">Illinois</ion-option>
     </ion-select>
   </ion-item>
 
   <!-- Years of Experience-->
   <ion-item>
-    <ion-input name ="filter.exp" type="number" placeholder="Years of Experience"></ion-input>
+    <ion-input name ="filterCand.zip" type="number" placeholder="Zip"></ion-input>
   </ion-item>
 
   <!-- Language -->
   <ion-item>
     <ion-label>Language</ion-label>
-    <ion-select [(ngModel)]="filter.language" interface = "popover">
+    <ion-select [(ngModel)]="filterCand.language" interface = "popover">
       <ion-option value="EN">English</ion-option>
       <ion-option value="CH">Chinese (Simplified)</ion-option>
       <ion-option value="SP">Spanish</ion-option>

@@ -4,22 +4,22 @@ import { CandidateListPage } from '../candidate-list/candidate-list';
 
 @IonicPage()
 @Component({
-  selector: 'page-home-temp',
-  templateUrl: 'home-temp.html',
+  selector: 'page-filter-candidate',
+  templateUrl: 'filter-candidate.html',
 })
-export class HomeTempPage {
-  filter = {}
+export class FilterCandidatePage {
+  filterCand = {}
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomeTempPage');
+    console.log('ionViewDidLoad FilterCandidatePage');
   }
 
   goTo(){
-    this.navCtrl.push(CandidateListPage, this.filter);
+    this.navCtrl.push(CandidateListPage, this.filterCand);
   }
 
 }
