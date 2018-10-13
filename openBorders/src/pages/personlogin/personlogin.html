@@ -1,4 +1,3 @@
-
 <ion-header>
 
 
@@ -13,41 +12,42 @@
 
 
 <ion-content padding>
+  <form (ngSubmit)="loginPerson()">
     <ion-list>
-        <ion-item>
-          <ion-label floating >Username</ion-label>
-          <ion-input type="text" #username required></ion-input>
-        </ion-item>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" #username required [(ngModel)]="form.username" name="username"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label floating >Email</ion-label>
-            <ion-input type="email" #username required></ion-input>
-          </ion-item>
-      
-        <ion-item>
-          <ion-label floating>Password</ion-label>
-          <ion-input type="password" #password required></ion-input>
-        </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" #username required [(ngModel)]="form.email" name="email"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label>Have H1B1</ion-label>
-            <ion-checkbox color="light"></ion-checkbox>
-            </ion-item>
-        
-            <ion-item>
-              <ion-label>Have H1B2</ion-label>
-              <ion-checkbox color="light"></ion-checkbox>
-            </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" #password required [(ngModel)]="form.password" name="password"></ion-input>
+      </ion-item>
 
-            <ion-item>
-                <ion-label>Have Green Card</ion-label>
-                <ion-checkbox color="light"></ion-checkbox>
-              </ion-item>
+      <ion-item>
+        <ion-label>Have H1B1</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.h1b1" name="h1b1"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Have H1B2</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.h1b2" name="h1b2"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Have Green Card</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.green" name="green"></ion-checkbox>
+      </ion-item>
 
 
-        <button ion-button full>Login</button>
-      </ion-list>
-
+      <button ion-button full type="submit">Login</button>
+    </ion-list>
+  </form>
 </ion-content>
 
 
