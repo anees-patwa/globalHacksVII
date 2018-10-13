@@ -22,7 +22,6 @@ import { HomeTemp } from '../pages/home-Temp/home-Temp';
     MyApp,
     HomePage,
     ListPage,
-
     CandidateListPage,
     CandidateInfoPage,
     CompanyloginPage,
@@ -38,7 +37,6 @@ import { HomeTemp } from '../pages/home-Temp/home-Temp';
     MyApp,
     HomePage,
     ListPage,
-
     CandidateListPage,
     CandidateInfoPage,
     CompanyloginPage,
