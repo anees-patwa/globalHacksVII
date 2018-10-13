@@ -20,7 +20,8 @@ import { PopoverPage } from '../pages/popover/popover';
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
 
 
-import { CompanyListPage } from '../pages/company-list/company-list';
+//import { CompanyListPage } from '../pages/company-list/company-list';
+import { SignoutPage } from '../pages/signout/signout';
 
 
 import { Events } from 'ionic-angular';
@@ -103,16 +104,19 @@ export class MyApp {
 
     if (firebase.auth().currentUser) {
       if(firebase.auth().currentUser.displayName == "person") {
-        this.pages.push({ title: 'Companies', component: CompanyListPage })
+        //this.pages.push({ title: 'Companies', component: CompanyListPage });
+        this.pages.push({ title: 'Companies', component: FilterCandidatePage});
       } else {
-        this.pages.push({ title: 'HomeTemplate', component: HomeTempPage});
-        this.pages.push({ title: 'FilterCandidate', component: FilterCandidatePage});
-      }
+        this.pages.push({ title: 'Candidates', component: HomeTempPage});
+      } 
 
+      
       //this.pages.push({ title: 'Messages', component: MessagesPage });
+      this.pages.push({ title: 'Sign Out', component: SignoutPage});
     } else {
       this.pages.push({ title: 'Login', component: PersonSignupPage });
     }
-
+    
+    console.log(this.pages);
   }
 }

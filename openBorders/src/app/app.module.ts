@@ -28,6 +28,8 @@ import { PopoverPage } from '../pages/popover/popover';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
 
+import { SignoutPage } from '../pages/signout/signout';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -45,6 +47,7 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     FilterCandidatePage,
     CompanyListPage,
     PersonSignupPage,
+    SignoutPage,
     PopoverPage
   ],
   imports: [
@@ -68,6 +71,7 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     FilterCandidatePage,
     CompanyListPage,
     PersonSignupPage,
+    SignoutPage,
     PopoverPage
   ],
   providers: [

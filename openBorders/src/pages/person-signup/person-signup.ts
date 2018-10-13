@@ -23,10 +23,15 @@ export class PersonSignupPage {
   }
 
   personLogin() {
-    
+    var page = this;
     let email = this.form.email;
     let password = this.form.password;
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function() {
+      page.events.publish("user:login");
+      page.navCtrl.setRoot(FilterCandidatePage);
+    })
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -34,16 +39,13 @@ export class PersonSignupPage {
       console.log(errorCode);
       console.log(errorMessage);
 
-      this.events.publish("user:login");
       
       // ...
     });
 
-    this.navCtrl.setRoot(FilterCandidatePage);
 
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PersonSignupPage');
   }
 
 }
