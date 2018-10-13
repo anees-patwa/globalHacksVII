@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import * as firebase from 'firebase';
 /**
  * Generated class for the PersonSignupPage page.
  *
@@ -14,10 +14,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'person-signup.html',
 })
 export class PersonSignupPage {
-
+  form = {};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  personLogin() {
+    let email = this.form.email;
+    let password = this.form.password;
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonSignupPage');
   }
