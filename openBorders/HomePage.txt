@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Border</title>
+  </head>
+  <body>
+    <h1>Open Border!</h1>
+    <h4 id='date'></h4>
+  </body>
+</html>
+
