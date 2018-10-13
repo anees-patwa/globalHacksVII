@@ -11,8 +11,14 @@ import { CandidateInfoPage } from '../pages/candidate-info/candidate-info';
 
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
+
+import { CompanySignupPage } from '../pages/company-signup/company-signup';
+import { PersonSignupPage } from '../pages/person-signup/person-signup';
+
+
 import { CompanyListPage } from '../pages/company-list/company-list';
 import { CompanyInfoPage } from '../pages/company-info/company-info';
+
 
 import { MessagingPage } from '../pages/messaging/messaging';
 
@@ -30,7 +36,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyloginPage,
     PersonloginPage,
     CompanyListPage,
-    MessagingPage
+    MessagingPage,
+    CompanysignupPage,
+    PersonsignupPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CompanyloginPage,
     PersonloginPage,
     CompanyListPage,
-    MessagingPage
+    MessagingPage,
+    CompanysignupPage,
+    PersonsignupPage
   ],
   providers: [
     StatusBar,
