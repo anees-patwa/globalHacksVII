@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-  <ion-card (click)="getCompanyDetail()">
+  <ion-card (click)="getCompanyDetail()" *ngFor="let company of companies">
     <ion-item>
       <h2>Company 1</h2>
       <ion-card-content>Testing</ion-card-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CompanyInfoPage } from '../company-info/company-info';
 
 /**
  * Generated class for the CompanyListPage page.
@@ -15,11 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CompanyListPage {
 
+  companies = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CompanyListPage');
+
+  }
+
+  getCompanyDetail(company) {
+    //push another page onto the history stack
+    //causing the nav controller to animate the new page in
+    this.navCtrl.push(CompanyInfoPage, company);
   }
 
 }
