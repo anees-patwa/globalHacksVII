@@ -1,0 +1,52 @@
+<!--
+  Generated template for the CompanyInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Company Information</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-row>
+      <ion-col><strong>Company ID</strong></ion-col>
+      <ion-col>{{company.id}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><strong>Region</strong></ion-col>
+      <ion-col>{{company.location}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><strong>Location</strong></ion-col>
+      <ion-col>{{company.city}}, {{company.state}}, {{company.zip}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><strong>Industry</strong></ion-col>
+      <ion-col>{{company.industry}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><strong>Size</strong></ion-col>
+      <ion-col>{{company["company size"]}}</ion-col>
+    </ion-row>
+  </ion-item>
+  <h4><ion-icon name="document"></ion-icon> Visas</h4>
+  <ion-list>
+    <ion-item no-lines *ngFor="let visa of company.visas">
+      {{visa}}
+    </ion-item>
+  </ion-list>
+  <h4><ion-icon name="chatbubbles"></ion-icon> Languages</h4>
+  <ion-list>
+      <ion-item no-lines *ngFor="let language of company.languages">
+        {{language}}
+      </ion-item>
+    </ion-list>
+  <button ion-button primary (click)="contactCompany()">Message</button>
+  <a ion-button secondary href="{{email}}">Email</a>
+</ion-content>
