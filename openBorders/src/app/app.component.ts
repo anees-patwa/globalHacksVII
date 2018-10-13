@@ -8,7 +8,12 @@ import { ListPage } from '../pages/list/list';
 import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
+
+import { HomeTempPage } from '../pages/home-temp/home-temp';
+import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
+
 import { CompanyListPage } from '../pages/company-list/company-list';
+
 
 
 
@@ -45,7 +50,12 @@ export class MyApp {
       { title: 'Candidates', component: CandidateListPage },
       { title: 'CompanyLogin', component: CompanyloginPage },
       { title: 'PersonLogin', component: PersonloginPage },
+
+      { title: 'HomeTemplate', component: HomeTempPage},
+      { title: 'FilterCandidate', component: FilterCandidatePage}
+
       { title: 'Companies', component: CompanyListPage },
+
     ];
 
   }
