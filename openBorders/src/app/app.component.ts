@@ -4,11 +4,19 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+<<<<<<< HEAD
 // import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 // import { CompanyloginPage } from '../pages/companylogin/companylogin';
 // import { PersonloginPage } from '../pages/personlogin/personlogin';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
+=======
+import { ListPage } from '../pages/list/list';
+import { CandidateListPage } from '../pages/candidate-list/candidate-list';
+import { CompanyloginPage } from '../pages/companylogin/companylogin';
+import { PersonloginPage } from '../pages/personlogin/personlogin';
+import { MessagingPage } from '../pages/messaging/messaging';
+>>>>>>> 357e0e113b649acbabab11eae0b72f8205efd841
 
 import { HomeTempPage } from '../pages/home-temp/home-temp';
 import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
@@ -43,7 +51,6 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public events: Events) {
 
     this.initializeApp();
-
 
     this.populatePages();
 

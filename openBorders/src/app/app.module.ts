@@ -10,8 +10,15 @@ import { CandidateInfoPage } from '../pages/candidate-info/candidate-info';
 
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
+
+import { CompanySignupPage } from '../pages/company-signup/company-signup';
+
 import { CompanyListPage } from '../pages/company-list/company-list';
 import { CompanyInfoPage } from '../pages/company-info/company-info';
+
+
+import { MessagingPage } from '../pages/messaging/messaging';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -29,10 +36,17 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
+    CompanyListPage,
+    MessagingPage,
+    CompanySignupPage,
+    PersonSignupPage,
     HomeTempPage,
     FilterCandidatePage,
+<<<<<<< HEAD
     CompanyListPage,
     PersonSignupPage
+=======
+>>>>>>> 357e0e113b649acbabab11eae0b72f8205efd841
   ],
   imports: [
     BrowserModule,
@@ -47,10 +61,17 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
+    CompanyListPage,
+    MessagingPage,
+    CompanySignupPage,
+    PersonSignupPage,
     HomeTempPage,
     FilterCandidatePage,
+<<<<<<< HEAD
     CompanyListPage,
     PersonSignupPage
+=======
+>>>>>>> 357e0e113b649acbabab11eae0b72f8205efd841
   ],
   providers: [
     StatusBar,
