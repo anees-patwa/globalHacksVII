@@ -37,8 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PersonloginPage,
     CompanyListPage,
     MessagingPage,
-    CompanysignupPage,
-    PersonsignupPage
+    CompanySignupPage,
+    PersonSignupPage
   ],
   imports: [
     BrowserModule,
@@ -56,8 +56,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PersonloginPage,
     CompanyListPage,
     MessagingPage,
-    CompanysignupPage,
-    PersonsignupPage
+    CompanySignupPage,
+    PersonSignupPage
   ],
   providers: [
     StatusBar,
