@@ -12,6 +12,11 @@ import { MessagingPage } from '../pages/messaging/messaging';
 import { CompanyListPage } from '../pages/company-list/company-list';
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
 
+import { HomeTempPage } from '../pages/home-temp/home-temp';
+import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
+
+
+
 
 
 //add this import statement to any component needing firebase
@@ -49,10 +54,16 @@ export class MyApp {
       { title: 'Person Login', component: PersonloginPage },
       { title: 'Messages', component: MessagingPage},
       { title: 'Candidates', component: CandidateListPage },
-      { title: 'CompanyLogin', component: CompanyloginPage },
-      { title: 'PersonLogin', component: PersonloginPage },
+      { title: 'Messages', component: MessagingPage },
+      { title: 'CompanySignup', component: CompanyloginPage },
+      { title: 'PersonSignup', component: PersonloginPage },
+
+      { title: 'HomeTemplate', component: HomeTempPage },
+      { title: 'FilterCandidate', component: FilterCandidatePage },
+
       { title: 'Companies', component: CompanyListPage },
       { title: "Person Login Page", component: PersonSignupPage}
+
     ];
 
   }

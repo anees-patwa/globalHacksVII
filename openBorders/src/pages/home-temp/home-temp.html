@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Open Board</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Authorization</ion-label>
+    <ion-select [(ngModel)]="filter.visa" interface = "popover">
+      <ion-option value="H1B">H1B</ion-option>
+      <ion-option value="H2B">H2B</ion-option>
+      <ion-option value="H2A">H2A</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <!--Industry -->
+  <ion-item>
+    <ion-label>Industry</ion-label>
+    <ion-select [(ngModel)]="filter.industry" interface = "popover">
+      <ion-option value="Technology">Technology</ion-option>
+      <ion-option value="Customer Service">Customer Service</ion-option>
+      <ion-option value="Commodities">Commodities</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Years of Experience-->
+  <ion-item>
+    <ion-input name ="filter.exp" type="number" placeholder="Years of Experience"></ion-input>
+  </ion-item>
+
+  <!-- Language -->
+  <ion-item>
+    <ion-label>Language</ion-label>
+    <ion-select [(ngModel)]="filter.language" interface = "popover">
+      <ion-option value="EN">English</ion-option>
+      <ion-option value="CH">Chinese (Simplified)</ion-option>
+      <ion-option value="SP">Spanish</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <button ion-button full (click)="goTo()">Submit</button>
+</ion-content>

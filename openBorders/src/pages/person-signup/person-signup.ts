@@ -4,19 +4,16 @@ import { AlertController } from 'ionic-angular';
 import { MessagingPage } from '../messaging/messaging';
 import * as firebase from 'firebase';
 
-
 @IonicPage()
 @Component({
   selector: 'page-person-signup',
   templateUrl: 'person-signup.html',
 })
 export class PersonSignupPage {
-  form = {};
-  email: string;
-  password: string;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+    email;
+    password;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   personLogin() {
@@ -51,7 +48,9 @@ export class PersonSignupPage {
       subTitle: 'Please enter correct credentials',
       buttons: ['Dismiss']
     });
-    alert.present();
+
+    this.navCtrl.setRoot(FilterCandidatePage);
+
   }
 
 
