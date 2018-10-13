@@ -24,11 +24,10 @@ export class CompanyloginPage {
     city: "",
     state: "",
     zip: "",
-    Mandarin: "",
-    industry: "",
     h1b1: "",
     h1b2: "",
     green: "",
+    industry: ""
   };
   ref = firebase.database().ref("companies");
   constructor(public navCtrl: NavController, public navParams: NavParams) {
