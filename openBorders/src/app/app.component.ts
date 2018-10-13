@@ -43,8 +43,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Candidates', component: CandidateListPage},
-      { title: 'CompanyLogin', component: CompanyloginPage },
-      { title: 'PersonLogin', component: PersonloginPage },
+      { title: 'Company Login', component: CompanyloginPage },
+      { title: 'Person Login', component: PersonloginPage },
       { title: 'Messages', component: MessagingPage}
     ];
 
