@@ -34,6 +34,8 @@ export class CompanyloginPage {
       var errorCode = error.code;
       var errorMessage = error.message;
     });
+
+    firebase.auth().currentUser.displayName = "company";
     let username = this.form.username;
     let size = this.form.size;
     let location = this.form.location;
@@ -64,8 +66,11 @@ export class CompanyloginPage {
       visas: visas,
     })
 
+
+
     this.navCtrl.setRoot(HomePage);
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CompanyloginPage');
   }

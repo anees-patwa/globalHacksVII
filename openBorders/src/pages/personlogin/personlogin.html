@@ -2,9 +2,9 @@
 
 
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Sign Up</ion-title>
   </ion-navbar>
 
@@ -12,7 +12,7 @@
 
 
 <ion-content padding>
-  <form (ngSubmit)="loginPerson()">
+  <form (ngSubmit)="signupPerson()">
     <ion-list>
       <ion-item>
         <ion-label floating>Username</ion-label>
@@ -27,6 +27,38 @@
       <ion-item>
         <ion-label floating>Password</ion-label>
         <ion-input type="password" #password required [(ngModel)]="form.password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Origin</ion-label>
+        <ion-input type="password" #password required [(ngModel)]="form.origin" name="origin"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>English</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.English" name="English"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Spanish</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Spanish" name="Spanish"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>French</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.French" name="French"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Arabic</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Arabic" name="Arabic"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mandarin</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Mandarin" name="Mandarin"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hindi</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Hindi" name="Hindi"></ion-checkbox>
       </ion-item>
 
       <ion-item>
@@ -45,7 +77,7 @@
       </ion-item>
 
 
-      <button ion-button full type="submit">Login</button>
+      <button ion-button full type="submit">Sign Up</button>
     </ion-list>
   </form>
 </ion-content>
