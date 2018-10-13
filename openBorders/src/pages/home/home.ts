@@ -15,7 +15,7 @@ export class HomePage {
   //content = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-
+  }
 }
 
 // export const snapshotToArray = snapshot => {
