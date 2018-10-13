@@ -27,6 +27,8 @@ import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate'
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
 
+import { SignoutPage } from '../pages/signout/signout';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -43,7 +45,8 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     HomeTempPage,
     FilterCandidatePage,
     CompanyListPage,
-    PersonSignupPage
+    PersonSignupPage,
+    SignoutPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     HomeTempPage,
     FilterCandidatePage,
     CompanyListPage,
-    PersonSignupPage
+    PersonSignupPage,
+    SignoutPage
   ],
   providers: [
     StatusBar,
