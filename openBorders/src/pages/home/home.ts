@@ -14,12 +14,7 @@ export class HomePage {
 
   //content = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // this.ref.on('value', resp => {
-    //   this.content = snapshotToArray(resp);
-    //   console.log(this.content);
-    // }
-    // );
-  }
+
 
 }
 
@@ -34,3 +29,4 @@ export class HomePage {
 
 //   return returnArr;
 // };
+
