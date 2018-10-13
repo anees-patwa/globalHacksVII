@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
+import { HomeTemp } from '../pages/home-Temp/home-Temp';
 
 
 
@@ -44,6 +45,7 @@ export class MyApp {
       { title: 'Candidates', component: CandidateListPage},
       { title: 'CompanyLogin', component: CompanyloginPage },
       { title: 'PersonLogin', component: PersonloginPage },
+      { title: 'HomeTemplate', component: HomeTemp}
     ];
 
   }

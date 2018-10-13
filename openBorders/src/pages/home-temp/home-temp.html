@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Open Board</ion-title>
+  </ion-navbar>
+</ion-header>
+
+//This will be the filter for Visa
+<ion-item>
+  <ion-lable>Authorization</ion-label>
+  <ion-select name = "visa" [(ngModel)]="visa" interface = "popover">
+    <ion-option value="H1B">H1B</ion-option>
+    <ion-option value="H2B">H2B</ion-option>
+    <ion-option value="H2A">H2A</ion-option>
+  </ion-select>
+</ion-item>
+
+<!--Industry -->
+<ion-item>
+  <ion-lable>Industry</ion-label>
+  <ion-select  name = "industry" [(ngModel)]="industry" interface = "popover">
+    <ion-option value="H1B">Technology</ion-option>
+    <ion-option value="H2B">Customer Service</ion-option>
+    <ion-option value="H2A">Commodities</ion-option>
+  </ion-select>
+</ion-item>
+
+<!-- Years of Experience-->
+<ion-item>
+  <ion-label>Years of Experience in Industry</ion-label>
+  <ion-input name ="exp" type="number" placeholder="Years of Experience"></ion-input>
+</ion-item>
+
+<!-- Language -->
+<ion-item>
+  <ion-label>Language</ion-label>
+  <ion-select  name = "lang" [(ngModel)]="lang" interface = "popover">
+    <ion-option value="EN">English</ion-option>
+    <ion-option value="CH">Chinese (Simplified)</ion-option>
+    <ion-option value="SP">Spanish</ion-option>
+  </ion-select>
+</ion-item>
