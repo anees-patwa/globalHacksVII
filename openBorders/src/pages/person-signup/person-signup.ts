@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
+import { FilterCandidatePage } from '../filter-candidate/filter-candidate';
 /**
  * Generated class for the PersonSignupPage page.
  *
@@ -31,6 +32,7 @@ export class PersonSignupPage {
       // ...
     });
 
+    this.navCtrl.setRoot(FilterCandidatePage);
 
   }
   ionViewDidLoad() {
