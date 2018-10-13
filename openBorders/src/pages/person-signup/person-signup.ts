@@ -14,7 +14,10 @@ import * as firebase from 'firebase';
   templateUrl: 'person-signup.html',
 })
 export class PersonSignupPage {
-  form = {};
+  form = {
+    email: "",
+    password: "",
+  };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -27,6 +30,8 @@ export class PersonSignupPage {
       var errorMessage = error.message;
       // ...
     });
+
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonSignupPage');

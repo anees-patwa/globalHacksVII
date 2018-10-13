@@ -15,7 +15,22 @@ import { HomePage } from '../home/home';
   templateUrl: 'personlogin.html',
 })
 export class PersonloginPage {
-  form = {};
+  form = {
+    email: "",
+    password: "",
+    username: "",
+    plang: "",
+    origin: "",
+    English: "",
+    French: "",
+    Spanish: "",
+    Mandarin: "",
+    Arabic: "",
+    Hindi: "",
+    h1b1: "",
+    h1b2: "",
+    green: "",
+  };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

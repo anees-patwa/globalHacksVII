@@ -15,7 +15,21 @@ import { HomePage } from '../home/home';
   templateUrl: 'companylogin.html',
 })
 export class CompanyloginPage {
-  form = {};
+  form = {
+    email: "",
+    password: "",
+    username: "",
+    size: "",
+    location: "",
+    city: "",
+    state: "",
+    zip: "",
+    Mandarin: "",
+    industry: "",
+    h1b1: "",
+    h1b2: "",
+    green: "",
+  };
   ref = firebase.database().ref("companies");
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
