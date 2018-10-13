@@ -52,7 +52,7 @@ export class MyApp {
       { title: 'PersonLogin', component: PersonloginPage },
 
       { title: 'HomeTemplate', component: HomeTempPage},
-      { title: 'FilterCandidate', component: FilterCandidatePage}
+      { title: 'FilterCandidate', component: FilterCandidatePage},
 
       { title: 'Companies', component: CompanyListPage },
 
