@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CandidateInfoPage } from '../candidate-info/candidate-info';
+
+import * as firebase from 'firebase';
 /**
  * Generated class for the CandidateListPage page.
  *
@@ -15,17 +17,34 @@ import { CandidateInfoPage } from '../candidate-info/candidate-info';
 })
 export class CandidateListPage {
 
+  ref = firebase.database().ref("people");
+
+  candidates = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
-   
+    this.ref.on('value', resp => {
+      this.candidates = snapshotToArray(resp);
+    }
+    );
   }
 
-  getUserDetail() {
-    //push another page onto the history stack
-    //causing the nav controller to animate the new page in
-    this.navCtrl.push(CandidateInfoPage);
+  getUserDetail(candidate) {
+    this.navCtrl.push(CandidateInfoPage, candidate);
   }
+
 
 }
+
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+
+  snapshot.forEach(childSnapshot => {
+    let item = childSnapshot.val();
+    returnArr.push(item);
+  });
+
+  return returnArr;
+};
