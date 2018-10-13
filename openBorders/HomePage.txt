@@ -1,3 +1,9 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Candidate Information</ion-title>
+  </ion-navbar>
+</ion-header>
+
 //For users to input city
 <ion-list>
     <ion-item>
@@ -5,6 +11,8 @@
       <ion-input type="text" #city></ion-input>
       <ion-input type="text" #city required></ion-input>
     </ion-item>
+
+  <script src="Scripts/jquery.js"></script>
 
   //For users to input state
      <ion-item>
@@ -19,4 +27,13 @@
       <ion-input type="text" #zip></ion-input>
       <ion-input type="text" #zip required></ion-input>
     </ion-item>
-    
+
+ //For users to input language
+     <ion-item>
+      <ion-label floating>language</ion-label>
+      <ion-input type="text" #language></ion-input>
+      <ion-input type="text" #language required></ion-input>
+    </ion-item>    
+
+      <button ion-button full (click)="goTo()">Submit</button>
+</ion-content>
