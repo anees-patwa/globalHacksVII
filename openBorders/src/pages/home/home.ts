@@ -10,16 +10,16 @@ import * as firebase from 'firebase';
 })
 export class HomePage {
 
-  ref = firebase.database().ref();
+  //ref = firebase.database().ref();
 
   content = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.ref.on('value', resp => {
-      this.content = snapshotToArray(resp);
-      console.log(this.content);
-    }
-    );
-  }
+  //   this.ref.on('value', resp => {
+  //     this.content = snapshotToArray(resp);
+  //     console.log(this.content);
+  //   }
+  //   );
+   }
 
 }
 
@@ -34,3 +34,4 @@ export const snapshotToArray = snapshot => {
 
   return returnArr;
 };
+
