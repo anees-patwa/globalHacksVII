@@ -42,11 +42,8 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     PersonSignupPage,
     HomeTempPage,
     FilterCandidatePage,
-<<<<<<< HEAD
     CompanyListPage,
     PersonSignupPage
-=======
->>>>>>> 357e0e113b649acbabab11eae0b72f8205efd841
   ],
   imports: [
     BrowserModule,
@@ -67,11 +64,8 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     PersonSignupPage,
     HomeTempPage,
     FilterCandidatePage,
-<<<<<<< HEAD
     CompanyListPage,
     PersonSignupPage
-=======
->>>>>>> 357e0e113b649acbabab11eae0b72f8205efd841
   ],
   providers: [
     StatusBar,
