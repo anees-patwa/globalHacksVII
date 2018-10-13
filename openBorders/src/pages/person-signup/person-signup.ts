@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
-import { MessagingPage } from '../messaging/messaging';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import * as firebase from 'firebase';
 
 @IonicPage()
@@ -10,43 +8,28 @@ import * as firebase from 'firebase';
   templateUrl: 'person-signup.html',
 })
 export class PersonSignupPage {
-
-    email;
-    password;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  form = {
+    email: "",
+    password: ""
+  };
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
   }
 
   personLogin() {
-      console.log("Passes");
+    
+    let email = this.form.email;
+    let password = this.form.password;
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log(errorCode);
+      console.log(errorMessage);
+
+      this.events.publish("user:login");
       
-      let email = this.email;
-      let password = this.password;
-      firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      });
-
-      // Checks to see if there is a current user
-      var user = firebase.auth().currentUser;
-      if (user) {
-        console.log("works");
-      } else {
-        console.log("fails");
-      }
-      
-      // Navigate to chat page
-      this.navCtrl.push(MessagingPage);
-      console.log("After messaging");
-
-    }
-  
-
-  presentAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'Invalid Login',
-      subTitle: 'Please enter correct credentials',
-      buttons: ['Dismiss']
+      // ...
     });
 
     this.navCtrl.setRoot(FilterCandidatePage);
