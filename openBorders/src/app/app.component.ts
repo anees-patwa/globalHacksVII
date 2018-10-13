@@ -4,14 +4,21 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
+import { CandidateListPage } from '../pages/candidate-list/candidate-list';
+import { CompanyloginPage } from '../pages/companylogin/companylogin';
+import { PersonloginPage } from '../pages/personlogin/personlogin';
+import { CompanyListPage } from '../pages/company-list/company-list';
+import { HomeTempPage } from '../pages/home-temp/home-temp';
+import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
+import { PopoverPage } from '../pages/popover/popover';
+
 // import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 // import { CompanyloginPage } from '../pages/companylogin/companylogin';
 // import { PersonloginPage } from '../pages/personlogin/personlogin';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
 
-import { HomeTempPage } from '../pages/home-temp/home-temp';
-import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
 
 import { CompanyListPage } from '../pages/company-list/company-list';
 
@@ -44,6 +51,18 @@ export class MyApp {
 
     this.initializeApp();
 
+    // used for an example of ngFor and navigation
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'List', component: ListPage },
+      { title: 'Candidates', component: CandidateListPage },
+      { title: 'CompanyLogin', component: CompanyloginPage },
+      { title: 'PersonLogin', component: PersonloginPage },
+      { title: 'HomeTemplate', component: HomeTempPage},
+      { title: 'FilterCandidate', component: FilterCandidatePage},
+      { title: 'Companies', component: CompanyListPage },
+      { title: 'popOver', component: PopoverPage}
+    ];
     this.populatePages();
 
     events.subscribe('user:login', () => {
@@ -66,7 +85,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    
+
     this.nav.setRoot(page.component);
   }
 

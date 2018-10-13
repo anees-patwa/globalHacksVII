@@ -24,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomeTempPage } from '../pages/home-temp/home-temp';
 import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
+import { PopoverPage } from '../pages/popover/popover';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
 
@@ -43,7 +44,8 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     HomeTempPage,
     FilterCandidatePage,
     CompanyListPage,
-    PersonSignupPage
+    PersonSignupPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ import { PersonSignupPage } from '../pages/person-signup/person-signup';
     HomeTempPage,
     FilterCandidatePage,
     CompanyListPage,
-    PersonSignupPage
+    PersonSignupPage,
+    PopoverPage
   ],
   providers: [
     StatusBar,
