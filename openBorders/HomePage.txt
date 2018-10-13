@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Open Border</title>
-  </head>
-  <body>
-    <h1>Open Border!</h1>
-    <h4 id='date'></h4>
-  </body>
-</html>
+//For users to input city
+<ion-list>
+    <ion-item>
+      <ion-label floating>City</ion-label>
+      <ion-input type="text" #city></ion-input>
+      <ion-input type="text" #city required></ion-input>
+    </ion-item>
 
+  //For users to input state
+     <ion-item>
+      <ion-label floating>State</ion-label>
+      <ion-input type="text" #state></ion-input>
+      <ion-input type="text" #state required></ion-input>
+    </ion-item>
+
+  //For users to input zip
+     <ion-item>
+      <ion-label floating>Zip Code</ion-label>
+      <ion-input type="text" #zip></ion-input>
+      <ion-input type="text" #zip required></ion-input>
+    </ion-item>
+    
