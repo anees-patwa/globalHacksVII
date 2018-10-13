@@ -1,0 +1,14 @@
+
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCQX9BOrQGk-z3fQusbzqff5XOLTETAz4o",
+    authDomain: "openborder-68e90.firebaseapp.com",
+    databaseURL: "https://openborder-68e90.firebaseio.com",
+    projectId: "openborder-68e90",
+    storageBucket: "openborder-68e90.appspot.com",
+    messagingSenderId: "471400892590"
+  };
+  firebase.initializeApp(config);
+</script>
