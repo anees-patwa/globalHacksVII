@@ -1,0 +1,46 @@
+<!--
+  Generated template for the CandidateInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Candidate Information</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item no-lines>
+    <ion-row>
+      <ion-col><strong>Candidate ID</strong></ion-col>
+      <ion-col>{{candidate.id}}</ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item no-lines>
+      <ion-row>
+        <ion-col><strong>Origin</strong></ion-col>
+        <ion-col>{{candidate.origin}}</ion-col>
+      </ion-row>
+    </ion-item>
+  <h4><ion-icon name="ribbon"></ion-icon> Skills</h4>
+  <ion-list>
+    <ion-item no-lines *ngFor="let skill of candidate.skills">
+      {{skill}}
+    </ion-item>
+  </ion-list>
+  <h4><ion-icon name="chatbubbles"></ion-icon> Languages</h4>
+  <ion-list>
+      <ion-item no-lines>
+          {{candidate.preferredLang}}
+          <ion-icon name="star"></ion-icon>
+        </ion-item>
+      <ion-item no-lines *ngFor="let language of candidate.languages">
+        {{language}}
+      </ion-item>
+    </ion-list>
+  <button ion-button secondary (click)="contactCandidate()">Contact</button>
+</ion-content>

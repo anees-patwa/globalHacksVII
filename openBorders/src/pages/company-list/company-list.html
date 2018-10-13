@@ -1,0 +1,40 @@
+<!--
+  Generated template for the CompanyListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Companies</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card (click)="getCompanyDetail(company)" *ngFor="let company of companies">
+    <ion-item>
+      <h2>Company {{company.id}}</h2>
+      <ion-card-content></ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="chatbubbles"></ion-icon>
+          <span>{{company.languages? company.languages.length: 0}} Languages</span>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="globe"></ion-icon>
+          <span>{{company.location}}</span>
+        </ion-col>
+      <ion-col>
+        <ion-icon name="document"></ion-icon>
+        <span>{{company.visas.length}} Visas</span>
+      </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+</ion-content>

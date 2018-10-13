@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Company Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="signupCompany()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Industry</ion-label>
+        <ion-input type="text" #industry required [(ngModel)]="form.industry" name="industry"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Company Size</ion-label>
+        <ion-input type="text" #companysize required [(ngModel)]="form.size" name="size"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Location</ion-label>
+        <ion-input type="text" #location required [(ngModel)]="form.location" name="location"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" #city required [(ngModel)]="form.city" name="city"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>State</ion-label>
+        <ion-input type="text" #state required [(ngModel)]="form.state" name="state"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Zip</ion-label>
+        <ion-input type="number" #zip required [(ngModel)]="form.zip" name="zip"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Accepts H1B1</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.h1b1" name="h1b1"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Accepts H1B2</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.h1b2" name="h1b2"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" #email required [(ngModel)]="form.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" #username required [(ngModel)]="form.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" #password required [(ngModel)]="form.password" name="password"></ion-input>
+      </ion-item>
+
+      <button ion-button full type="submit">Complete Signup</button>
+    </ion-list>
+  </form>
+</ion-content>

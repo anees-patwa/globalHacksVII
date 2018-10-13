@@ -4,15 +4,33 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+
+    <button ion-button (click)="logIn()" id = "log" top right>
+      Log-In
+    </button>
+
+
+    <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="signup">Sign-Up</ion-icon>
+    </button>
   </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="icons" color="secondary">
+      <ion-segment-button value="Home">
+        <ion-icon name="Home">Home</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="About">
+        <ion-icon name="About">About</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="Contact">
+        <ion-icon name="Contact">Contact</ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
+<!-- Jason's filter goes for content -->
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <h1>List Title</h1>
 </ion-content>
