@@ -13,6 +13,9 @@ import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
 import { CompanyListPage } from '../pages/company-list/company-list';
 import { CompanyInfoPage } from '../pages/company-info/company-info';
+
+import { MessagingPage } from '../pages/messaging/messaging';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -26,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
-    CompanyListPage
+    CompanyListPage,
+    MessagingPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CandidateInfoPage,
     CompanyloginPage,
     PersonloginPage,
-    CompanyListPage
+    CompanyListPage,
+    MessagingPage
   ],
   providers: [
     StatusBar,
