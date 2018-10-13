@@ -7,7 +7,19 @@ import {NavController} from 'ionic-angular';
 })
 
 export class HomeTemp{
+
+  filterQuery: string = '';
+  items: string[];
+
   constructor(public navCtrl: NavController){
-    
+
   }
+
+  // initializeItems(){
+  //   // This will be where applicant data will be stored
+  //   // Pull from firebase probably
+  //   this.items = [
+  //
+  //   ];
+  // }
 }
