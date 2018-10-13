@@ -20,7 +20,6 @@ export class CandidateInfoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     //console.log(navParams);
     this.candidate = navParams.data;
-    console.log(this.candidate);
   }
 
   ionViewDidLoad() {

@@ -25,6 +25,9 @@ import { MessagingPage } from '../pages/messaging/messaging';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HomeTempPage } from '../pages/home-temp/home-temp';
+import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,6 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MessagingPage,
     CompanySignupPage,
     PersonSignupPage
+    HomeTempPage,
+    FilterCandidatePage,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MessagingPage,
     CompanySignupPage,
     PersonSignupPage
+    HomeTempPage,
+    FilterCandidatePage,
   ],
   providers: [
     StatusBar,

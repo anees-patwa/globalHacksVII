@@ -10,6 +10,12 @@ import { CompanyloginPage } from '../pages/companylogin/companylogin';
 import { PersonloginPage } from '../pages/personlogin/personlogin';
 import { MessagingPage } from '../pages/messaging/messaging';
 
+import { HomeTempPage } from '../pages/home-temp/home-temp';
+import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
+
+import { CompanyListPage } from '../pages/company-list/company-list';
+
+
 
 
 //add this import statement to any component needing firebase
@@ -46,6 +52,14 @@ export class MyApp {
       { title: 'Company Login', component: CompanyloginPage },
       { title: 'Person Login', component: PersonloginPage },
       { title: 'Messages', component: MessagingPage }
+      { title: 'CompanySignup', component: CompanyloginPage },
+      { title: 'PersonSignup', component: PersonloginPage },
+
+      { title: 'HomeTemplate', component: HomeTempPage },
+      { title: 'FilterCandidate', component: FilterCandidatePage }
+
+      { title: 'Companies', component: CompanyListPage },
+
     ];
 
   }
