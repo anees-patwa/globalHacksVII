@@ -50,6 +50,7 @@ export class CompanyloginPage {
   signupCompany() {
     let email = this.form.email;
     let password = this.form.password;
+    let form = this.form;
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -61,15 +62,15 @@ export class CompanyloginPage {
         photoURL: "",
       });
       let uid = firebase.auth().currentUser.uid;
-      let username = this.form.username;
-      let size = this.form.size;
-      let location = this.form.location;
-      let city = this.form.city;
-      let state = this.form.state;
-      let zip = this.form.zip;
-      let industry = this.form.industry;
-      let h1b1 = this.form.h1b1;
-      let h1b2 = this.form.h1b2;
+      let username = form.username;
+      let size = form.size;
+      let location = form.location;
+      let city = form.city;
+      let state = form.state;
+      let zip = form.zip;
+      let industry = form.industry;
+      let h1b1 = form.h1b1;
+      let h1b2 = form.h1b2;
 
       let visas = [];
       if (h1b1) {
@@ -80,22 +81,22 @@ export class CompanyloginPage {
       }
 
       let languages = [];
-      if (this.form.English) {
+      if (form.English) {
         languages.push("english");
       }
-      if (this.form.French) {
+      if (form.French) {
         languages.push("french");
       }
-      if (this.form.Spanish) {
+      if (form.Spanish) {
         languages.push("spanish");
       }
-      if (this.form.Mandarin) {
+      if (form.Mandarin) {
         languages.push("mandarin");
       }
-      if (this.form.Arabic) {
+      if (form.Arabic) {
         languages.push("arabic");
       }
-      if (this.form.Hindi) {
+      if (form.Hindi) {
         languages.push("hindi");
       }
 
@@ -110,7 +111,7 @@ export class CompanyloginPage {
         zip: zip,
         visas: visas,
         languages: languages,
-        plang: this.form.plang,
+        plang: form.plang,
       }).then(function () {
         this.navCtrl.setRoot(HomePage);
       });

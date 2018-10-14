@@ -6,6 +6,20 @@
 
 
   </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="icons" color="primary">
+      <ion-segment-button value="Home">
+        <ion-icon name="Home">Home</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="About">
+        <ion-icon name="About">About</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="Contact">
+        <ion-icon name="Contact">Contact</ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <!-- Jason's filter goes for content -->
@@ -24,8 +38,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
-
 
 </ion-content>

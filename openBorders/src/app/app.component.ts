@@ -20,11 +20,12 @@ import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-deta
 // import { PersonloginPage } from '../pages/personlogin/personlogin';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
+import { EditUserInfoPage } from '../pages/edit-user-info/edit-user-info';
 
 
 //import { CompanyListPage } from '../pages/company-list/company-list';
 import { SignoutPage } from '../pages/signout/signout';
-
+import {EditCompanyInfoPage} from '../pages/edit-company-info/edit-company-info';
 
 import { Events } from 'ionic-angular';
 
@@ -55,6 +56,18 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'List', component: ListPage },
+      { title: 'Candidates', component: CandidateListPage },
+      { title: 'CompanyLogin', component: CompanyloginPage },
+      { title: 'PersonLogin', component: PersonloginPage },
+      { title: 'HomeTemplate', component: HomeTempPage},
+      { title: 'FilterCandidate', component: FilterCandidatePage},
+      { title: 'Companies', component: CompanyListPage },
+      { title: 'popOver', component: PopoverPage},
+      { title: 'editUser', component: EditUserInfoPage}
+    ];
     this.populatePages();
 
     events.subscribe('user:login', () => {
@@ -98,9 +111,10 @@ export class MyApp {
         //this.pages.push({ title: 'Companies', component: CompanyListPage });
         this.pages.push({ title: 'Companies', component: FilterCandidatePage });
         this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
+        this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage });
-
+        this.pages.push({ title: 'Edit Company', component: EditCompanyInfoPage});
       }
 
 

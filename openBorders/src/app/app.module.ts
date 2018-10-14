@@ -27,6 +27,8 @@ import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate'
 import { PopoverPage } from '../pages/popover/popover';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
+import { EditUserInfoPage } from '../pages/edit-user-info/edit-user-info';
+import {EditCompanyInfoPage} from '../pages/edit-company-info/edit-company-info';
 
 import { SignoutPage } from '../pages/signout/signout';
 
@@ -51,8 +53,10 @@ import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-deta
     PersonSignupPage,
     SignoutPage,
     PopoverPage,
+    EditUserInfoPage,
     AmbassadorListPage,
-    AmbassadorDetailPage
+    AmbassadorDetailPage,
+    EditCompanyInfoPage
   ],
   imports: [
     BrowserModule,
@@ -77,9 +81,10 @@ import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-deta
     PersonSignupPage,
     SignoutPage,
     PopoverPage,
-
+    EditUserInfoPage,
     AmbassadorListPage,
-    AmbassadorDetailPage
+    AmbassadorDetailPage,
+    EditCompanyInfoPage
   ],
   providers: [
     StatusBar,
