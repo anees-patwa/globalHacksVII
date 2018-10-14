@@ -21,15 +21,15 @@ export class PersonloginPage {
     username: "",
     plang: "",
     origin: "",
-    English: "",
-    French: "",
-    Spanish: "",
-    Mandarin: "",
-    Arabic: "",
-    Hindi: "",
-    h1b1: "",
-    h1b2: "",
-    green: "",
+    English: false,
+    French: false,
+    Spanish: false,
+    Mandarin: false,
+    Arabic: false,
+    Hindi: false,
+    h1b1: false,
+    h1b2: false,
+    green: false,
   };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -50,58 +50,51 @@ export class PersonloginPage {
     let username = this.form.username;
     let plang = this.form.plang;
     let origin = this.form.origin;
-    let English = "";
+
+  var languages = [];
+  var visas = [];
     if (this.form.English) {
-      English = "english";
+      languages.push("english");
     }
-    let French = "";
     if (this.form.French) {
-      French = "french";
+      languages.push("french");
     }
-    let Spanish = "";
     if (this.form.Spanish) {
-      Spanish = "spanish";
+      languages.push("spanish");
     }
-    let Mandarin = "";
     if (this.form.Mandarin) {
-      Mandarin = "mandarin";
+      languages.push("mandarin");
     }
-    let Arabic = "";
     if (this.form.Arabic) {
-      Arabic = "arabic";
+      languages.push("arabic");
     }
-    let Hindi = "";
     if (this.form.Hindi) {
-      Hindi = "hindi";
+      languages.push("hindi");
     }
 
-    let h1b1 = "";
     if (this.form.h1b1) {
-      h1b1 = "H1B1";
+      visas.push("h1b");
     }
-    let h1b2 = "";
     if (this.form.h1b2) {
-      h1b2 = "H1B2";
+      visas.push("h2b");
     }
-    let green = "";
     if (this.form.green) {
-      green = "Green Card";
+      visas.push("green");
     }
 
 
     firebase.database().ref("people/" + username).set({
       id: username,
-      languages: [English, Spanish, French, Mandarin, Arabic, Hindi],
+      languages: languages,
       origin: origin,
       preferredLang: plang,
-
+      visas: visas
     });
 
 
     this.navCtrl.setRoot(HomePage);
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PersonloginPage');
   }
 
 }

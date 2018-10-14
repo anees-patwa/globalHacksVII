@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Open Board</ion-title>
+    <ion-title>Candidate Search</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -13,7 +13,6 @@
     <ion-select [(ngModel)]="filter.visa" interface = "popover">
       <ion-option value="H1B">H1B</ion-option>
       <ion-option value="H2B">H2B</ion-option>
-      <ion-option value="H2A">H2A</ion-option>
     </ion-select>
   </ion-item>
 
@@ -29,16 +28,16 @@
 
   <!-- Years of Experience-->
   <ion-item>
-    <ion-input name ="filter.exp" type="number" placeholder="Years of Experience"></ion-input>
+    <ion-input [(ngModel)]="filter.exp" type="number" placeholder="Years of Experience"></ion-input>
   </ion-item>
 
   <!-- Language -->
   <ion-item>
     <ion-label>Language</ion-label>
     <ion-select [(ngModel)]="filter.language" interface = "popover">
-      <ion-option value="EN">English</ion-option>
-      <ion-option value="CH">Chinese (Simplified)</ion-option>
-      <ion-option value="SP">Spanish</ion-option>
+      <ion-option value="english">English</ion-option>
+      <ion-option value="mandarin">Chinese (Mandarin)</ion-option>
+      <ion-option value="spanish">Spanish</ion-option>
     </ion-select>
   </ion-item>
 

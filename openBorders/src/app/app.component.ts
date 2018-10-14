@@ -53,17 +53,7 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Candidates', component: CandidateListPage },
-      { title: 'CompanyLogin', component: CompanyloginPage },
-      { title: 'PersonLogin', component: PersonloginPage },
-      { title: 'HomeTemplate', component: HomeTempPage},
-      { title: 'FilterCandidate', component: FilterCandidatePage},
-      { title: 'Companies', component: CompanyListPage },
-      { title: 'popOver', component: PopoverPage}
-    ];
+
     this.populatePages();
 
     events.subscribe('user:login', () => {
@@ -103,8 +93,8 @@ export class MyApp {
     // { title: 'Companies', component: CompanyListPage }
 
     if (firebase.auth().currentUser) {
+      console.log(firebase.auth().currentUser.displayName);
       if(firebase.auth().currentUser.displayName == "person") {
-        //this.pages.push({ title: 'Companies', component: CompanyListPage });
         this.pages.push({ title: 'Companies', component: FilterCandidatePage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage});
@@ -114,9 +104,9 @@ export class MyApp {
       //this.pages.push({ title: 'Messages', component: MessagesPage });
       this.pages.push({ title: 'Sign Out', component: SignoutPage});
     } else {
+      this.pages.push({ title: 'Companies', component: FilterCandidatePage});
       this.pages.push({ title: 'Login', component: PersonSignupPage });
     }
     
-    console.log(this.pages);
   }
 }
