@@ -31,6 +31,8 @@ import { EditUserInfoPage } from '../pages/edit-user-info/edit-user-info';
 
 import { SignoutPage } from '../pages/signout/signout';
 
+import { AmbassadorListPage } from '../pages/ambassador-list/ambassador-list';
+import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-detail';
 @NgModule({
   declarations: [
     MyApp,
@@ -50,7 +52,9 @@ import { SignoutPage } from '../pages/signout/signout';
     PersonSignupPage,
     SignoutPage,
     PopoverPage,
-    EditUserInfoPage
+    EditUserInfoPage,
+    AmbassadorListPage,
+    AmbassadorDetailPage
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,9 @@ import { SignoutPage } from '../pages/signout/signout';
     PersonSignupPage,
     SignoutPage,
     PopoverPage,
-    EditUserInfoPage
+    EditUserInfoPage,
+    AmbassadorListPage,
+    AmbassadorDetailPage
   ],
   providers: [
     StatusBar,
