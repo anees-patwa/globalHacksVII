@@ -20,21 +20,28 @@
   <ion-card (click)="getCompanyDetail(company)" *ngFor="let company of companies">
     <ion-item>
       <h2>Company {{company.id}}</h2>
-      <ion-card-content></ion-card-content>
+      <ion-card-content>
+        {{company.location}}
+      </ion-card-content>
       <ion-row>
         <ion-col>
-          <ion-icon name="chatbubbles"></ion-icon>
-          <span>{{company.languages? company.languages.length: 0}} Languages</span>
+        <ion-icon name="chatbubbles"></ion-icon>
+        <span>{{company.languages? company.languages.length: 0}} Languages</span>
         </ion-col>
         <ion-col>
-          <ion-icon name="globe"></ion-icon>
-          <span>{{company.location}}</span>
+          <ion-icon name="document"></ion-icon>
+          <span>{{company.visas? company.visas.length: 0}} Visas</span>
         </ion-col>
-      <ion-col>
-        <ion-icon name="document"></ion-icon>
-        <span>{{company.visas? company.visas.length: 0}} Visas</span>
-      </ion-col>
-      </ion-row>
-    </ion-item>
-  </ion-card>
+        <ion-col>
+            <button ion-button class="button-liked" *ngIf="currentUser && (!company.ilike)" (click)="likeCompany($event, company)">
+              <ion-icon name="arrow-round-up" > {{company.upvotes}}</ion-icon>
+            </button>
+            <button ion-button class="button-notliked" *ngIf="currentUser && company.ilike" (click)="unlikeCompany($event, company)">
+                <ion-icon name="arrow-round-down" > {{company.upvotes}}</ion-icon>
+              </button>
+              <ion-icon name="arrow-round-up" *ngIf="!currentUser" > {{company.upvotes}}</ion-icon>
+          </ion-col>
+        </ion-row>
+        </ion-item>
+        </ion-card>
 </ion-content>

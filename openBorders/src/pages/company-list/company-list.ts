@@ -19,6 +19,7 @@ export class CompanyListPage {
   ref = firebase.database().ref("companies");
   companies = [];
   filter = {};
+  currentUser = firebase.auth().currentUser;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     if (navParams && navParams.data) {
@@ -27,6 +28,10 @@ export class CompanyListPage {
   }
 
   ionViewDidLoad() {
+    this.getCompanies();
+  }
+
+  getCompanies() {
     this.ref.once('value', resp => {
       this.companies = snapshotToArray(resp, this.filter);
     });
@@ -38,11 +43,79 @@ export class CompanyListPage {
     this.navCtrl.push(CompanyInfoPage, company);
   }
 
+  likeCompany(event: Event, company) {
+
+    firebase.database().ref("companies/" + company.key + "/votes/" + firebase.auth().currentUser.uid).set(1)
+    .then(() => {
+      company.upvotes += 1;
+      company.ilike = true;
+    });
+
+    event.cancelBubble = true;
+  }
+
+  unlikeCompany(event: Event, company) {
+
+    firebase.database().ref("companies/" + company.key + "/votes/" + firebase.auth().currentUser.uid).remove()
+    .then(() => {
+      company.upvotes -= 1;
+      company.ilike = false;
+    });
+
+    event.cancelBubble = true;
+  }
+
+
 }
 
+// export const getCompanyLikes = company => {
+
+//   console.log(company);
+
+//   let me = firebase.auth().currentUser;
+
+//   var likes;
+
+//   var likeref = firebase.database().ref("votes/" + company.key);
+
+//   if (likeref) {
+//     likeref.once('value', likeresp => {
+
+//       likes = likesToArray(likeresp);
+//     }).then(() => {
+
+//       console.log(likes);
+//       if (likes) {
+//         likes.forEach(childLike => function () {
+//           if (childLike && childLike.val()) {
+//             if (me && (childLike.val() == me.uid)) {
+//               console.log("I like it!");
+//               company.ilike = true;
+//             }
+//             console.log("adding upvote");
+//             company.upvotes += 1;
+//           }
+//         });
+//       }
+//     })
+//   }
+
+
+// }
+
+// export const likesToArray = snapshot => {
+//   let returnArr = [];
+
+//   snapshot.forEach(childSnapshot => {
+//     returnArr.push(childSnapshot.key);
+//   });
+
+//   return returnArr;
+// }
 
 export const snapshotToArray = (snapshot, filter) => {
   let returnArr = [];
+  let me = firebase.auth().currentUser;
 
   snapshot.forEach(childSnapshot => {
 
@@ -76,8 +149,23 @@ export const snapshotToArray = (snapshot, filter) => {
       }
     }
 
+    item.upvotes = 0;
+    item.ilike = false;
+
+    if (item.votes) {
+      Object.keys(item.votes).forEach(uid => {
+        item.upvotes += 1;
+        if (me && (uid == me.uid)) {
+          item.ilike = true;
+        }
+      });
+    }
     item.key = childSnapshot.key;
+
+    
     returnArr.push(item);
+
+
   });
 
   return returnArr;

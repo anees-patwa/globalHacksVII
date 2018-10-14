@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Events } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { PersonSignupPage } from '../person-signup/person-signup';
@@ -14,8 +14,13 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public popoverCtrl: PopoverController
-  ) { }
+    public popoverCtrl: PopoverController,
+    public events: Events
+
+    
+
+  ) { 
+  }
 
   presentPopover(myEvent) {
     let popover = this.popoverCtrl.create(PopoverPage);
