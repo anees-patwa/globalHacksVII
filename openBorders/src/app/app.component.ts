@@ -25,7 +25,7 @@ import { EditUserInfoPage } from '../pages/edit-user-info/edit-user-info';
 
 //import { CompanyListPage } from '../pages/company-list/company-list';
 import { SignoutPage } from '../pages/signout/signout';
-
+import {EditCompanyInfoPage} from '../pages/edit-company-info/edit-company-info';
 
 import { Events } from 'ionic-angular';
 
@@ -114,7 +114,7 @@ export class MyApp {
         this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage });
-
+        this.pages.push({ title: 'Edit Company', component: EditCompanyInfoPage});
       }
 
 

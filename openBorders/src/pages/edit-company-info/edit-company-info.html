@@ -19,16 +19,33 @@
 <ion-content padding>
 
 
-  <form (ngSubmit)="editUser()">
+  <form (ngSubmit)="editCompany()">
     <ion-list>
-      <ion-item>
-        <ion-label floating>Username</ion-label>
-        <ion-input type="text"  [(ngModel)]="form.username" name="username" id="username"  ></ion-input>
-      </ion-item>
+
 
       <ion-item>
-        <ion-label floating >Origin</ion-label>
-        <ion-input type="text" [(ngModel)]="form.origin" name="origin" id="origin"></ion-input>
+        <ion-label floating >Size</ion-label>
+        <ion-input type="text" [(ngModel)]="form.size" name="size" id="size"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >Location</ion-label>
+        <ion-input type="text" [(ngModel)]="form.location" name="location" id="location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >City</ion-label>
+        <ion-input type="text" [(ngModel)]="form.city" name="city" id="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >State</ion-label>
+        <ion-input type="text" [(ngModel)]="form.state" name="state" id="state"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >Zip</ion-label>
+        <ion-input type="text" [(ngModel)]="form.zip" name="zip" id="zip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >Industry</ion-label>
+        <ion-input type="text" [(ngModel)]="form.industry" name="industry" id="industry"></ion-input>
       </ion-item>
       <!-- Languages -->
       <h3>Languages</h3>
@@ -65,24 +82,20 @@
 
 <!-- Visa section -->
       <ion-item>
-        <ion-label>Have H1B1</ion-label>
+        <ion-label>Sponsor H1B1</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.h1b1" name="h1b1" ></ion-checkbox>
       </ion-item>
 
       <ion-item>
-        <ion-label>Have H1B2</ion-label>
+        <ion-label>Sponsor H1B2</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.h1b2" name="h1b2"></ion-checkbox>
       </ion-item>
 
       <ion-item>
-        <ion-label>Have Green Card</ion-label>
+        <ion-label>Sponsor Green Card</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.green" name="green"></ion-checkbox>
       </ion-item>
 
-      <h3>Work Experience</h3>
-      <ion-item>
-        <ion-textarea name="workexp" [(ngModel)]="form.workexp" id="workexp"></ion-textarea>
-      </ion-item>
       <button ion-button full type="submit">Update</button>
     </ion-list>
   </form>

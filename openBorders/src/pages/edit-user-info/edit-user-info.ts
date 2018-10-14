@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EditUserInfoPage } from '../edit-user-info/edit-user-info';
+import { FilterCandidatePage} from '../filter-candidate/filter-candidate';
 import * as firebase from 'firebase';
 
 
@@ -36,13 +37,64 @@ export class EditUserInfoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     //console.log(this.currUserInfo.ambassador);
-    /*this.myUser = firebase.auth().currentUser.uid;
+    this.myUser = firebase.auth().currentUser.uid;
     console.log(this.myUser);
     this.ref = firebase.database().ref("people/" + firebase.auth().currentUser.uid);
     this.ref.once('value', resp => {
       //this.currUserInfo = snapshotToArray(resp);
       this.currUserInfo = resp.val();
-    });*/
+      this.form.username = this.currUserInfo.id;
+      this.form.origin = this.currUserInfo.origin;
+      this.form.plang = this.currUserInfo.preferredLang;
+      this.form.workexp = this.currUserInfo.workexp;
+      let form = this.form;
+      this.currUserInfo.visas.forEach(function(x){
+        if(x == 'h1b'){
+          form.h1b1 = true;
+          console.log(form.h1b1);
+        }
+        if (x == 'h2b'){
+          form.h1b2 = true;
+        }
+        if (x == 'green'){
+          form.green = true;
+        }
+      });
+      this.currUserInfo.languages.forEach(function(x){
+        if(x == 'english'){
+          form.English = true;
+        }
+        if (x == 'french'){
+          form.French = true;
+        }
+        if (x == 'spanish'){
+          form.Spanish = true;
+        }
+        if (x == 'mandarin'){
+          form.Mandarin = true;
+        }
+        if (x == 'arabic'){
+          form.Arabic = true;
+        }
+        if (x == 'hindi'){
+          form.Hindi = true;
+        }
+      });
+
+
+      /*console.log(this.currUserInfo);
+      var username = document.getElementById('username');
+      console.log(username.value);
+      username.value = this.currUserInfo.id;
+      console.log(username.value);
+      var origin = document.getElementById('origin');
+      origin.value = this.currUserInfo.origin;
+      var plang = document.getElementById('plang');
+      plang.value = this.currUserInfo.preferredLang;
+      var workexp = document.getElementById('workexp');
+      workexp.value = this.currUserInfo.workexp;*/
+
+    });
 
     //console.log("data loaded");
 
@@ -53,22 +105,15 @@ export class EditUserInfoPage {
     console.log('ionViewDidEnter EditUserInfoPage');
   }
 
-ionViewCanEnter(): boolean {
-  this.myUser = firebase.auth().currentUser.uid;
-  console.log(this.myUser);
-  this.ref = firebase.database().ref("people/" + firebase.auth().currentUser.uid);
-  this.ref.once('value', resp => {
-    //this.currUserInfo = snapshotToArray(resp);
-    this.currUserInfo = resp.val();
-  });
-  if(this.currUserInfo !== null){
-    console.log("canLoad");
-    return true;
-  } else {
-    console.log("cannotLoad");
-    return false;
-}
-}
+  /*ionViewCanEnter(): Promise<any>{
+   return new Promise((resolve, reject) => {
+     firebase.auth().currentUser.then((user: firebase.User) => {
+    resolve(true);
+     }).catch(() => {
+    resolve(false);
+     });
+   })
+ }*/
 
 /*dataLoad(){
   this.myUser = firebase.auth().currentUser.uid;
@@ -186,7 +231,7 @@ ionViewCanEnter(): boolean {
       workexp: workexp
     });
 
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(FilterCandidatePage);
   }
 }
 
