@@ -30,6 +30,7 @@ export class PersonloginPage {
     h1b1: "",
     h1b2: "",
     green: "",
+    workexp: "",
   };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -50,6 +51,7 @@ export class PersonloginPage {
       photoURL: "",
     })
 
+    let workexp = this.form.workexp;
     let username = this.form.username;
     let plang = this.form.plang;
     let origin = this.form.origin;
@@ -97,6 +99,7 @@ export class PersonloginPage {
       languages: [English, Spanish, French, Mandarin, Arabic, Hindi],
       origin: origin,
       preferredLang: plang,
+      workexp: workexp,
 
     });
 
