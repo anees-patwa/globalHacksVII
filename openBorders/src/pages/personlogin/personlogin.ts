@@ -62,69 +62,68 @@ export class PersonloginPage {
       firebase.auth().currentUser.updateProfile({
         displayName: "person",
         photoURL: "",
-      })
-  
-      let workexp = form.workexp;
-      let username = form.username;
-      let plang = form.plang;
-      let origin = form.origin;
-      let locationYears = form.locationYears;
-      let yearsWorked = form.yearsWorked;
-  
-      var languages = [];
-      var visas = [];
-      if (form.English) {
-        languages.push("english");
-      }
-      if (form.French) {
-        languages.push("french");
-      }
-      if (form.Spanish) {
-        languages.push("spanish");
-      }
-      if (form.Mandarin) {
-        languages.push("mandarin");
-      }
-      if (form.Arabic) {
-        languages.push("arabic");
-      }
-      if (form.Hindi) {
-        languages.push("hindi");
-      }
-  
-      if (form.h1b1) {
-        visas.push("h1b");
-      }
-      if (form.h1b2) {
-        visas.push("h2b");
-      }
-      if (form.green) {
-        visas.push("green");
-      }
-  
-  
-      firebase.database().ref("people/" + firebase.auth().currentUser.uid).set({
-        id: username,
-        languages: languages,
-        origin: origin,
-        preferredLang: plang,
-        visas: visas,
-        workexp: workexp,
-        locationYears: locationYears,
-        yearsWorked: yearsWorked,
-        ambassador: false,
-        email: email,
-        city: form.city,
-        state: form.state,
-        zip: form.zip
       }).then(function() {
-        page.events.publish("user:login");
-        if (firebase.auth().currentUser.displayName == "person") {
-          page.navCtrl.setRoot(FilterCandidatePage);
-        } else {
-          page.navCtrl.setRoot(HomeTempPage);
+
+        let workexp = form.workexp;
+        let username = form.username;
+        let plang = form.plang;
+        let origin = form.origin;
+        let locationYears = form.locationYears;
+        let yearsWorked = form.yearsWorked;
+    
+        var languages = [];
+        var visas = [];
+        if (form.English) {
+          languages.push("english");
         }
+        if (form.French) {
+          languages.push("french");
+        }
+        if (form.Spanish) {
+          languages.push("spanish");
+        }
+        if (form.Mandarin) {
+          languages.push("mandarin");
+        }
+        if (form.Arabic) {
+          languages.push("arabic");
+        }
+        if (form.Hindi) {
+          languages.push("hindi");
+        }
+    
+        if (form.h1b1) {
+          visas.push("h1b");
+        }
+        if (form.h1b2) {
+          visas.push("h2b");
+        }
+        if (form.green) {
+          visas.push("green");
+        }
+    
+    
+        firebase.database().ref("people/" + firebase.auth().currentUser.uid).set({
+          id: username,
+          languages: languages,
+          origin: origin,
+          preferredLang: plang,
+          visas: visas,
+          workexp: workexp,
+          locationYears: locationYears,
+          yearsWorked: yearsWorked,
+          ambassador: false,
+          email: email,
+          city: form.city,
+          state: form.state,
+          zip: form.zip
+        }).then(function() {
+          page.events.publish("user:login");
+  
+          page.navCtrl.setRoot(FilterCandidatePage);
+        });
       });
+  
   
   
     });
