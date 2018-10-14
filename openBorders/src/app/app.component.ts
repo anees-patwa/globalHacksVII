@@ -29,6 +29,8 @@ import {EditCompanyInfoPage} from '../pages/edit-company-info/edit-company-info'
 
 import { Events } from 'ionic-angular';
 
+import { MessagesPage } from '../pages/messages/messages';
+
 //add this import statement to any component needing firebase
 import * as firebase from 'firebase';
 
@@ -56,18 +58,6 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Candidates', component: CandidateListPage },
-      { title: 'CompanyLogin', component: CompanyloginPage },
-      { title: 'PersonLogin', component: PersonloginPage },
-      { title: 'HomeTemplate', component: HomeTempPage},
-      { title: 'FilterCandidate', component: FilterCandidatePage},
-      { title: 'Companies', component: CompanyListPage },
-      { title: 'popOver', component: PopoverPage},
-      { title: 'editUser', component: EditUserInfoPage}
-    ];
     this.populatePages();
 
     events.subscribe('user:login', () => {
@@ -110,13 +100,14 @@ export class MyApp {
       if (firebase.auth().currentUser.displayName == "person") {
         //this.pages.push({ title: 'Companies', component: CompanyListPage });
         this.pages.push({ title: 'Companies', component: FilterCandidatePage });
-        this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
         this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage });
         this.pages.push({ title: 'Edit Company', component: EditCompanyInfoPage});
       }
 
+      this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
+      this.pages.push({ title: 'Messages', component: MessagesPage});
 
       //this.pages.push({ title: 'Messages', component: MessagesPage });
       this.pages.push({ title: 'Sign Out', component: SignoutPage });

@@ -34,6 +34,9 @@ import { SignoutPage } from '../pages/signout/signout';
 
 import { AmbassadorListPage } from '../pages/ambassador-list/ambassador-list';
 import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-detail';
+
+import { MessagesPage } from '../pages/messages/messages';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -56,6 +59,7 @@ import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-deta
     EditUserInfoPage,
     AmbassadorListPage,
     AmbassadorDetailPage,
+    MessagesPage,
     EditCompanyInfoPage
   ],
   imports: [
@@ -81,6 +85,7 @@ import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-deta
     PersonSignupPage,
     SignoutPage,
     PopoverPage,
+    MessagesPage,
     EditUserInfoPage,
     AmbassadorListPage,
     AmbassadorDetailPage,

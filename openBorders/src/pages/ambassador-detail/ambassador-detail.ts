@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MessagingPage } from '../messaging/messaging'
 
 /**
  * Generated class for the AmbassadorDetailPage page.
@@ -25,6 +26,10 @@ export class AmbassadorDetailPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AmbassadorDetailPage');
+  }
+
+  contactAmbassador() {
+    this.navCtrl.push(MessagingPage, this.ambassador);
   }
 
 }
