@@ -27,7 +27,15 @@ export class CompanyloginPage {
     h1b1: false,
     h1b2: false,
     green: "",
-    industry: ""
+    industry: "",
+    English: false,
+    French: false,
+    Spanish: false,
+    Mandarin: false,
+    Arabic: false,
+    Hindi: false,
+    plang: "",
+
   };
   ref = firebase.database().ref("companies");
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -70,7 +78,27 @@ export class CompanyloginPage {
         visas.push("H2B");
       }
 
-      firebase.database().ref("companies/" + username).set({
+      let languages = [];
+      if (this.form.English) {
+        languages.push("english");
+      }
+      if (this.form.French) {
+        languages.push("french");
+      }
+      if (this.form.Spanish) {
+        languages.push("spanish");
+      }
+      if (this.form.Mandarin) {
+        languages.push("mandarin");
+      }
+      if (this.form.Arabic) {
+        languages.push("arabic");
+      }
+      if (this.form.Hindi) {
+        languages.push("hindi");
+      }
+
+      firebase.database().ref("companies/" + email).set({
         id: username,
         city: city,
         "company size": size,
@@ -80,6 +108,8 @@ export class CompanyloginPage {
         state: state,
         zip: zip,
         visas: visas,
+        languages: languages,
+        plang: this.form.plang,
       }).then(function () {
         this.navCtrl.setRoot(HomePage);
       });

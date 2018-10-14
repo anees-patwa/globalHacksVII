@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Company Signup</ion-title>
   </ion-navbar>
 
@@ -66,6 +66,47 @@
         <ion-label floating>Password</ion-label>
         <ion-input type="password" #password required [(ngModel)]="form.password" name="password"></ion-input>
       </ion-item>
+
+      <h3>Languages</h3>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Preferred Language</ion-label>
+          <ion-select color="light" [(ngModel)]="form.plang" name="plang">
+            <ion-option value="english">English</ion-option>
+            <ion-option value="spanish">Spanish</ion-option>
+            <ion-option value="french">French</ion-option>
+            <ion-option value="arabic">Arabic</ion-option>
+            <ion-option value="mandarin">Mandarin</ion-option>
+            <ion-option value="hindi">Hindi</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>English</ion-label>
+          <ion-checkbox color="light" [(ngModel)]="form.English" name="English"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Spanish</ion-label>
+          <ion-checkbox color="light" [(ngModel)]="form.Spanish" name="Spanish"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>French</ion-label>
+          <ion-checkbox color="light" [(ngModel)]="form.French" name="French"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Arabic</ion-label>
+          <ion-checkbox color="light" [(ngModel)]="form.Arabic" name="Arabic"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mandarin</ion-label>
+          <ion-checkbox color="light" [(ngModel)]="form.Mandarin" name="Mandarin"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hindi</ion-label>
+          <ion-checkbox color="light" [(ngModel)]="form.Hindi" name="Hindi"></ion-checkbox>
+        </ion-item>
+      </ion-list>
 
       <button ion-button full type="submit">Complete Signup</button>
     </ion-list>
