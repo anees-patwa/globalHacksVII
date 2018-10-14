@@ -108,6 +108,7 @@ export class MyApp {
       console.log(firebase.auth().currentUser.displayName);
       if(firebase.auth().currentUser.displayName == "person") {
         this.pages.push({ title: 'Companies', component: FilterCandidatePage});
+        this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage});
       }
@@ -118,7 +119,6 @@ export class MyApp {
     } else {
       this.pages.push({ title: 'Companies', component: FilterCandidatePage});
       this.pages.push({ title: 'Login', component: PersonSignupPage });
-      this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
     }
 
     console.log(this.pages);

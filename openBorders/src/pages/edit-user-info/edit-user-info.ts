@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
-
-/**
- * Generated class for the EditUserInfoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { EditUserInfoPage } from '../edit-user-info/edit-user-info';
 
 @IonicPage()
 @Component({
@@ -15,39 +9,39 @@ import * as firebase from 'firebase';
   templateUrl: 'edit-user-info.html',
 })
 export class EditUserInfoPage {
+  myUser;
+  email;
+  curreUserInfo;
   form = {
     email: "",
     password: "",
     username: "",
     plang: "",
     origin: "",
-    English: "",
-    French: "",
-    Spanish: "",
-    Mandarin: "",
-    Arabic: "",
-    Hindi: "",
-    h1b1: "",
-    h1b2: "",
-    green: "",
-    workexp: "",
+    English: false,
+    French: false,
+    Spanish: false,
+    Mandarin: false,
+    Arabic: false,
+    Hindi: false,
+    h1b1: false,
+    h1b2: false,
+    green: false,
+    workexp: null
   };
 
-  public myUser = {};
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    myUser = firebase.auth().currentUser;
+    email = myUser.email;
+    currUserInfo = firebase.database().ref("people/" + email);
+
   }
 
   ionViewDidLoad() {
-    const personRef: firebase.database.Reference = firebase.database().ref(`people`);
-    personRef.on('value', personSnapshot => {
-      myPerson = personSnapshot.val();
-    });
     console.log('ionViewDidLoad EditUserInfoPage');
   }
 
   editUser(){
 
   }
-
 }
