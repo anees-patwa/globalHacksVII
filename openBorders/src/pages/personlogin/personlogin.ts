@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import * as firebase from 'firebase';
-import { HomePage } from '../home/home';
+
+import { FilterCandidatePage } from '../filter-candidate/filter-candidate';
+import { HomeTempPage } from '../home-temp/home-temp';
+
 /**
  * Generated class for the PersonloginPage page.
  *
@@ -30,75 +33,102 @@ export class PersonloginPage {
     h1b1: false,
     h1b2: false,
     green: false,
-    workexp: null
+    workexp: null,
+    locationYears: 0,
+    yearsWorked: 0,
+    city: "",
+    state: "",
+    zip: ""
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
   }
 
 
   signupPerson() {
-    let email = this.form.email;
-    let password = this.form.password;
+    var form = this.form;
+    var page = this;
+
+    let email = form.email;
+    let password = form.password;
+
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       // ...
+    }).then(function() {
+
+
+      firebase.auth().currentUser.updateProfile({
+        displayName: "person",
+        photoURL: "",
+      })
+  
+      let workexp = form.workexp;
+      let username = form.username;
+      let plang = form.plang;
+      let origin = form.origin;
+      let locationYears = form.locationYears;
+      let yearsWorked = form.yearsWorked;
+  
+      var languages = [];
+      var visas = [];
+      if (form.English) {
+        languages.push("english");
+      }
+      if (form.French) {
+        languages.push("french");
+      }
+      if (form.Spanish) {
+        languages.push("spanish");
+      }
+      if (form.Mandarin) {
+        languages.push("mandarin");
+      }
+      if (form.Arabic) {
+        languages.push("arabic");
+      }
+      if (form.Hindi) {
+        languages.push("hindi");
+      }
+  
+      if (form.h1b1) {
+        visas.push("h1b");
+      }
+      if (form.h1b2) {
+        visas.push("h2b");
+      }
+      if (form.green) {
+        visas.push("green");
+      }
+  
+  
+      firebase.database().ref("people/" + firebase.auth().currentUser.uid).set({
+        id: username,
+        languages: languages,
+        origin: origin,
+        preferredLang: plang,
+        visas: visas,
+        workexp: workexp,
+        locationYears: locationYears,
+        yearsWorked: yearsWorked,
+        ambassador: false,
+        email: email,
+        city: form.city,
+        state: form.state,
+        zip: form.zip
+      }).then(function() {
+        page.events.publish("user:login");
+        if (firebase.auth().currentUser.displayName == "person") {
+          page.navCtrl.setRoot(FilterCandidatePage);
+        } else {
+          page.navCtrl.setRoot(HomeTempPage);
+        }
+      });
+  
+  
     });
 
-    firebase.auth().currentUser.updateProfile({
-      displayName: "person",
-      photoURL: "",
-    })
-
-    let workexp = this.form.workexp;
-    let username = this.form.username;
-    let plang = this.form.plang;
-    let origin = this.form.origin;
-
-    var languages = [];
-    var visas = [];
-    if (this.form.English) {
-      languages.push("english");
-    }
-    if (this.form.French) {
-      languages.push("french");
-    }
-    if (this.form.Spanish) {
-      languages.push("spanish");
-    }
-    if (this.form.Mandarin) {
-      languages.push("mandarin");
-    }
-    if (this.form.Arabic) {
-      languages.push("arabic");
-    }
-    if (this.form.Hindi) {
-      languages.push("hindi");
-    }
-
-    if (this.form.h1b1) {
-      visas.push("h1b");
-    }
-    if (this.form.h1b2) {
-      visas.push("h2b");
-    }
-    if (this.form.green) {
-      visas.push("green");
-    }
-
-
-    firebase.database().ref("people/" + email).set({
-      id: username,
-      languages: languages,
-      origin: origin,
-      preferredLang: plang,
-      visas: visas,
-      workexp: workexp
-    });
-
-
-    this.navCtrl.setRoot(HomePage);
   }
   ionViewDidLoad() {
   }
