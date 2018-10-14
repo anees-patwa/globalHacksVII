@@ -56,8 +56,8 @@ export class PersonloginPage {
     let plang = this.form.plang;
     let origin = this.form.origin;
 
-  var languages = [];
-  var visas = [];
+    var languages = [];
+    var visas = [];
     if (this.form.English) {
       languages.push("english");
     }
@@ -88,7 +88,7 @@ export class PersonloginPage {
     }
 
 
-    firebase.database().ref("people/" + username).set({
+    firebase.database().ref("people/" + email).set({
       id: username,
       languages: languages,
       origin: origin,
