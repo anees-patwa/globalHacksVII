@@ -1,3 +1,24 @@
 page-home {
 
 }
+#homeboy {
+    background-image: url('../assets/imgs/wall.jpg'); 
+    background-position: center;
+    background-size: cover;
+    width:100%; 
+    height:100%; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 20vmin;
+    line-height: 25vmin;
+    letter-spacing: .5vmin;
+    font-family: "Impact", "Serif";
+    color: blue;
+    text-shadow: 1vw 1vh red;
+}
+
+ion-button {
+    color: #111111;
+}
