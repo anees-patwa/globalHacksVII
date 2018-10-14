@@ -34,6 +34,7 @@ export class CompanyloginPage {
     Mandarin: false,
     Arabic: false,
     Hindi: false,
+    plang: "",
 
   };
   ref = firebase.database().ref("companies");
@@ -108,6 +109,7 @@ export class CompanyloginPage {
         zip: zip,
         visas: visas,
         languages: languages,
+        plang: this.form.plang,
       }).then(function () {
         this.navCtrl.setRoot(HomePage);
       });
