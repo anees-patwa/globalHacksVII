@@ -7,19 +7,6 @@
 
   </ion-navbar>
 
-  <ion-toolbar>
-    <ion-segment [(ngModel)]="icons" color="primary">
-      <ion-segment-button value="Home">
-        <ion-icon name="Home">Home</ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="About">
-        <ion-icon name="About">About</ion-icon>
-      </ion-segment-button>
-      <ion-segment-button value="Contact">
-        <ion-icon name="Contact">Contact</ion-icon>
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
 </ion-header>
 
 <!-- Jason's filter goes for content -->
@@ -28,12 +15,20 @@
   <ion-grid>
     <ion-row align-items-end>
       <ion-col>
+<<<<<<< HEAD
+        <button class="home-button" ion-button (click)="logIn()" id="log" top right>
+=======
         <button ion-button block (click)="logIn()" id="log" top right>
+>>>>>>> 5b906f14a702f2b72e398c035860dd21c603fbf6
           Log-In
         </button>
       </ion-col>
       <ion-col>
+<<<<<<< HEAD
+        <button class="home-button" ion-button (click)="presentPopover($event)">
+=======
         <button ion-button block (click)="presentPopover($event)">
+>>>>>>> 5b906f14a702f2b72e398c035860dd21c603fbf6
           Sign-Up
         </button>
       </ion-col>

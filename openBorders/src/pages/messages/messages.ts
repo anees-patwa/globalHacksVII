@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import * as firebase from 'firebase';
 
+import{ ChatHistoryPage } from '../chat-history/chat-history';
 /**
  * Generated class for the MessagesPage page.
  *
@@ -76,6 +77,7 @@ export class MessagesPage {
 
   getMessageHistory(partner) {
     console.log(partner);
+    this.navCtrl.push(ChatHistoryPage, partner);
   }
 
 }
