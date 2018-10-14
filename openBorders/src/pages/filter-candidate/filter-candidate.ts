@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CandidateListPage } from '../candidate-list/candidate-list';
+import { CompanyListPage } from '../company-list/company-list';
 
 @IonicPage()
 @Component({
@@ -19,7 +19,8 @@ export class FilterCandidatePage {
   }
 
   goTo(){
-    this.navCtrl.push(CandidateListPage, this.filterCand);
+    console.log(this.filterCand);
+    this.navCtrl.push(CompanyListPage, this.filterCand);
   }
 
 }

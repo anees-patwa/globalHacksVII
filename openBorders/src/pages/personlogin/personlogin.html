@@ -16,28 +16,37 @@
     <ion-list>
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type="text" #username required [(ngModel)]="form.username" name="username"></ion-input>
+        <ion-input type="text" required [(ngModel)]="form.username" name="username"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input type="email" #username required [(ngModel)]="form.email" name="email"></ion-input>
+        <ion-input type="email" required [(ngModel)]="form.email" name="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="password" #password required [(ngModel)]="form.password" name="password"></ion-input>
+        <ion-input type="password" required [(ngModel)]="form.password" name="password"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Origin</ion-label>
-        <ion-input type="text" #password required [(ngModel)]="form.origin" name="origin"></ion-input>
+        <ion-input type="text" required [(ngModel)]="form.origin" name="origin"></ion-input>
       </ion-item>
+    </ion-list>
       <h3>Languages</h3>
+      <ion-list>
       <ion-item>
         <ion-label floating>Preferred Language</ion-label>
-        <ion-input color="light" [(ngModel)]="form.plang" name="plang"></ion-input>
-      </ion-item>
+        <ion-select color="light" [(ngModel)]="form.plang" name="plang">
+          <ion-option>English</ion-option>
+          <ion-option>Spanish</ion-option>
+          <ion-option>French</ion-option>
+          <ion-option>Arabic</ion-option>
+          <ion-option>Mandarin</ion-option>
+          <ion-option>Hindi</ion-option>
+        </ion-select>
+      </ion-item> 
       <ion-item>
         <ion-label>English</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.English" name="English"></ion-checkbox>
@@ -64,6 +73,7 @@
         <ion-label>Hindi</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.Hindi" name="Hindi"></ion-checkbox>
       </ion-item>
+    </ion-list>
       <!-- <h3>Job Category</h3>
       <ion-item>
         <ion-label>Accounting/Finance/Banking</ion-label>
@@ -85,14 +95,15 @@
         <ion-label>Landscaping</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.Landscaping" name="Landscaping"></ion-checkbox>
       </ion-item> -->
-
+      <h3>Employment Eligibility</h3>
+      <ion-list>
       <ion-item>
-        <ion-label>Have H1B1</ion-label>
+        <ion-label>Have H1B</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.h1b1" name="h1b1"></ion-checkbox>
       </ion-item>
 
       <ion-item>
-        <ion-label>Have H1B2</ion-label>
+        <ion-label>Have H2B</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.h1b2" name="h1b2"></ion-checkbox>
       </ion-item>
 
@@ -109,6 +120,3 @@
     </ion-list>
   </form>
 </ion-content>
-
-
-Username, password, visa h1b and h2b, green card
