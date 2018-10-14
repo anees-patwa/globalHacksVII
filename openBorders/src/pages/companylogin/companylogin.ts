@@ -49,6 +49,7 @@ export class CompanyloginPage {
   }*/
 
   signupCompany() {
+    let page = this;
     let email = this.form.email;
     let password = this.form.password;
     let form = this.form;
@@ -56,71 +57,71 @@ export class CompanyloginPage {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+    }).then(function () {
+
+      firebase.auth().currentUser.updateProfile({
+        displayName: "company",
+        photoURL: "",
+      }).then(function() {
+        let uid = firebase.auth().currentUser.uid;
+        let username = form.username;
+        let size = form.size;
+        let location = form.location;
+        let city = form.city;
+        let state = form.state;
+        let zip = form.zip;
+        let industry = form.industry;
+        let h1b1 = form.h1b1;
+        let h1b2 = form.h1b2;
+  
+        let visas = [];
+        if (h1b1) {
+          visas.push("H1B");
+        }
+        if (h1b2) {
+          visas.push("H2B");
+        }
+  
+        let languages = [];
+        if (form.English) {
+          languages.push("english");
+        }
+        if (form.French) {
+          languages.push("french");
+        }
+        if (form.Spanish) {
+          languages.push("spanish");
+        }
+        if (form.Mandarin) {
+          languages.push("mandarin");
+        }
+        if (form.Arabic) {
+          languages.push("arabic");
+        }
+        if (form.Hindi) {
+          languages.push("hindi");
+        }
+  
+        firebase.database().ref("companies/" + uid).set({
+          id: username,
+          city: city,
+          "company size": size,
+          email: email,
+          industry: industry,
+          location: location,
+          state: state,
+          zip: zip,
+          visas: visas,
+          languages: languages,
+          plang: form.plang,
+        }).then(() => {
+          page.events.publish("user:login");
+          page.navCtrl.setRoot(HomeTempPage);
+        });
+  
+      });
+      
     })
-
-    firebase.auth().currentUser.updateProfile({
-      displayName: "company",
-      photoURL: "",
-    });
-    let uid = firebase.auth().currentUser.uid;
-    let username = form.username;
-    let size = form.size;
-    let location = form.location;
-    let city = form.city;
-    let state = form.state;
-    let zip = form.zip;
-    let industry = form.industry;
-    let h1b1 = form.h1b1;
-    let h1b2 = form.h1b2;
-
-    let visas = [];
-    if (h1b1) {
-      visas.push("H1B");
-    }
-    if (h1b2) {
-      visas.push("H2B");
-    }
-
-    let languages = [];
-    if (form.English) {
-      languages.push("english");
-    }
-    if (form.French) {
-      languages.push("french");
-    }
-    if (form.Spanish) {
-      languages.push("spanish");
-    }
-    if (form.Mandarin) {
-      languages.push("mandarin");
-    }
-    if (form.Arabic) {
-      languages.push("arabic");
-    }
-    if (form.Hindi) {
-      languages.push("hindi");
-    }
-
-    firebase.database().ref("companies/" + uid).set({
-      id: username,
-      city: city,
-      "company size": size,
-      email: email,
-      industry: industry,
-      location: location,
-      state: state,
-      zip: zip,
-      visas: visas,
-      languages: languages,
-      plang: form.plang,
-    }).then(() => {
-      this.events.publish("user:login");
-      this.navCtrl.setRoot(HomeTempPage);
-    });
-
-
-
-
 
   }
 
