@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import * as firebase from 'firebase';
 import { EditUserInfoPage } from '../edit-user-info/edit-user-info';
+import * as firebase from 'firebase';
+
 
 @IonicPage()
 @Component({
   selector: 'page-edit-user-info',
   templateUrl: 'edit-user-info.html',
 })
+
 export class EditUserInfoPage {
-  myUser;
-  email;
-  curreUserInfo;
+
+   myUser;
+   ref;
+   currUserInfo;
   form = {
     email: "",
     password: "",
@@ -31,54 +34,112 @@ export class EditUserInfoPage {
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    myUser = firebase.auth().currentUser;
-    email = myUser.email;
-    currUserInfo = firebase.database().ref("people/" + email);
-    for(let x of currUserInfo.languages){
+
+    //console.log(this.currUserInfo.ambassador);
+    /*this.myUser = firebase.auth().currentUser.uid;
+    console.log(this.myUser);
+    this.ref = firebase.database().ref("people/" + firebase.auth().currentUser.uid);
+    this.ref.once('value', resp => {
+      //this.currUserInfo = snapshotToArray(resp);
+      this.currUserInfo = resp.val();
+    });*/
+
+    //console.log("data loaded");
+
+
+  }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter EditUserInfoPage');
+  }
+
+ionViewCanEnter(): boolean {
+  this.myUser = firebase.auth().currentUser.uid;
+  console.log(this.myUser);
+  this.ref = firebase.database().ref("people/" + firebase.auth().currentUser.uid);
+  this.ref.once('value', resp => {
+    //this.currUserInfo = snapshotToArray(resp);
+    this.currUserInfo = resp.val();
+  });
+  if(this.currUserInfo !== null){
+    console.log("canLoad");
+    return true;
+  } else {
+    console.log("cannotLoad");
+    return false;
+}
+}
+
+/*dataLoad(){
+  this.myUser = firebase.auth().currentUser.uid;
+  console.log(this.myUser);
+  this.ref = firebase.database().ref("people/" + firebase.auth().currentUser.uid);
+  this.ref.once('value', resp => {
+    //this.currUserInfo = snapshotToArray(resp);
+    this.currUserInfo = resp.val();
+  })
+    this.currUserInfo.languages.forEach(function(x){
       if(x === 'h1b'){
         this.form.h1b1 = true;
-      }else if (x === 'h2b'){
+      }
+      if (x === 'h2b'){
         this.form.h1b2 = true;
-      }else if (x === 'green'){
+      }
+      if (x === 'green'){
         this.form.green = true;
       }
-    }
-    for(let x of currUserInfo.visas){
+    });
+    this.currUserInfo.visas.forEach(function(x){
       if(x === 'english'){
         this.form.English = true;
-      }else if (x === 'french'){
+      }
+      if (x === 'french'){
         this.form.French = true;
-      }else if (x === 'spanish'){
+      }
+      if (x === 'spanish'){
         this.form.Spanish = true;
-      }else if (x === 'mandarin'){
+      }
+      if (x === 'mandarin'){
         this.form.Mandarin = true;
-      }else if (x === 'arabic'){
+      }
+      if (x === 'arabic'){
         this.form.Arabic = true;
-      }else if (x === 'hindi'){
+      }
+      if (x === 'hindi'){
         this.form.Hindi = true;
       }
-    }
+    });
+    console.log("data loaded");
+    return true;
 
-  }
+}*/
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EditUserInfoPage');
+/*ionViewCanEnter(){
+  if(dataLoad()){
+    return true;
+  } else {
+    return false;
   }
+}*/
+
+
 
   editUser(){
     let email = this.form.email;
     let password = this.form.password;
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    /*firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       // ...
-    });
+    });*/
 
-    firebase.auth().currentUser.updateProfile({
+    /*firebase.auth().currentUser.updateProfile({
       displayName: "person",
       photoURL: "",
-    })
+    })*/
+
+    let uid = firebase.auth().currentUser.uid;
 
     let workexp = this.form.workexp;
     let username = this.form.username;
@@ -116,7 +177,7 @@ export class EditUserInfoPage {
       visas.push("green");
     }
 
-    firebase.database().ref("people/" + email).set({
+    firebase.database().ref("people/" + uid).set({
       id: username,
       languages: languages,
       origin: origin,
@@ -128,3 +189,14 @@ export class EditUserInfoPage {
     this.navCtrl.setRoot(HomePage);
   }
 }
+
+export const snapshotToArray = snapshot => {
+  let returnArr = [];
+
+  snapshot.forEach(childSnapshot => {
+    let item = childSnapshot.val();
+    returnArr.push(item);
+  });
+
+  return returnArr;
+};

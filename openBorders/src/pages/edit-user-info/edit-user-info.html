@@ -23,28 +23,28 @@
     <ion-list>
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type="text" #username required [(ngModel)]="form.username" name="username" value={{currUserInfo.username}}></ion-input>
+        <ion-input type="text" #username required [(ngModel)]="form.username" name="username" value="{{currUserInfo.username}}" ></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input type="email" #username required [(ngModel)]="form.email" name="email" value={{currUserInfo.email}}></ion-input>
+        <ion-input type="email" #username required [(ngModel)]="form.email" name="email" value="{{currUserInfo.email}}"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input type="password" #password required [(ngModel)]="form.password" name="password" value={{currUserInfo.password}}></ion-input>
+        <ion-input type="password" #password required [(ngModel)]="form.password" name="password" value="{{currUserInfo.password}}"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Origin</ion-label>
-        <ion-input type="text" #password required [(ngModel)]="form.origin" name="origin" value={{currUserInfo.origin}}></ion-input>
+        <ion-input type="text" #password required [(ngModel)]="form.origin" name="origin" value="{{currUserInfo.origin}}"></ion-input>
       </ion-item>
       <!-- Languages -->
       <h3>Languages</h3>
       <ion-item>
         <ion-label floating>Preferred Language</ion-label>
-        <ion-input color="light" [(ngModel)]="form.plang" name="plang" value={{currUserInfo.preferredLang}}></ion-input>
+        <ion-input color="light" [(ngModel)]="form.plang" name="plang" value="{{currUserInfo.preferredLang}}"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>English</ion-label>
@@ -91,7 +91,7 @@
 
       <h3>Work Experience</h3>
       <ion-item>
-        <ion-textarea name="workexp" [(ngModel)]="form.workexp" value={{currUserInfo.workexp}}></ion-textarea>
+        <ion-textarea name="workexp" [(ngModel)]="form.workexp" value="{{currUserInfo.workexp}}"></ion-textarea>
       </ion-item>
       <button ion-button full type="submit">Sign Up</button>
     </ion-list>
