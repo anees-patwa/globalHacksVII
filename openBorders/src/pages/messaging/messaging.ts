@@ -34,14 +34,14 @@ export class MessagingPage {
     var page = this;
     if (this.recipient.key) {
 
-    firebase.database().ref("messages/" + new Date().valueOf()).set({
-      recipient: this.recipient.key,
-      sender: firebase.auth().currentUser.uid,
-      message: this.message
-    }).then(function() {
-      page.navCtrl.push(MessagesPage);
-    });
-  }
+      firebase.database().ref("messages/" + new Date().valueOf()).set({
+        recipient: this.recipient.key,
+        sender: firebase.auth().currentUser.uid,
+        message: this.message
+      }).then(function () {
+        page.navCtrl.push(MessagesPage);
+      });
+    }
   }
 
 }
