@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { FilterCandidatePage } from '../filter-candidate/filter-candidate';
+import { HomeTempPage } from '../home-temp/home-temp';
 /**
  * Generated class for the PersonSignupPage page.
  *
@@ -29,7 +30,11 @@ export class PersonSignupPage {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function() {
       page.events.publish("user:login");
-      page.navCtrl.setRoot(FilterCandidatePage);
+      if (firebase.auth().currentUser.displayName == "person") {
+        page.navCtrl.setRoot(FilterCandidatePage);
+      } else {
+        page.navCtrl.setRoot(HomeTempPage);
+      }
     })
     .catch(function (error) {
       // Handle Errors here.

@@ -24,8 +24,8 @@ export class CompanyloginPage {
     city: "",
     state: "",
     zip: "",
-    h1b1: "",
-    h1b2: "",
+    h1b1: false,
+    h1b2: false,
     green: "",
     industry: ""
   };
@@ -46,49 +46,50 @@ export class CompanyloginPage {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+    }).then(function () {
+
+      firebase.auth().currentUser.updateProfile({
+        displayName: "company",
+        photoURL: "",
+      });
+      let username = this.form.username;
+      let size = this.form.size;
+      let location = this.form.location;
+      let city = this.form.city;
+      let state = this.form.state;
+      let zip = this.form.zip;
+      let industry = this.form.industry;
+      let h1b1 = this.form.h1b1;
+      let h1b2 = this.form.h1b2;
+
+      let visas = [];
+      if (h1b1) {
+        visas.push("H1B");
+      }
+      if (h1b2) {
+        visas.push("H2B");
+      }
+
+      firebase.database().ref("companies/" + username).set({
+        id: username,
+        city: city,
+        "company size": size,
+        email: email,
+        industry: industry,
+        location: location,
+        state: state,
+        zip: zip,
+        visas: visas,
+      }).then(function () {
+        this.navCtrl.setRoot(HomePage);
+      });
     });
 
-    firebase.auth().currentUser.updateProfile({
-      displayName: "company",
-      photoURL: "",
-    });
-    let username = this.form.username;
-    let size = this.form.size;
-    let location = this.form.location;
-    let city = this.form.city;
-    let state = this.form.state;
-    let zip = this.form.zip;
-    let industry = this.form.industry;
-    let h1b1 = this.form.h1b1;
-    let h1b2 = this.form.h1b2;
-
-    let visas = [];
-    if (h1b1) {
-      visas.push("H1B1");
-    }
-    if (h1b2) {
-      visas.push("H1B2");
-    }
-
-    firebase.database().ref("companies/" + username).set({
-      id: username,
-      city: city,
-      "company size": size,
-      email: email,
-      industry: industry,
-      location: location,
-      state: state,
-      zip: zip,
-      visas: visas,
-    })
 
 
-
-    this.navCtrl.setRoot(HomePage);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CompanyloginPage');
   }
 
 }

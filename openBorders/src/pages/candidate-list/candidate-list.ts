@@ -20,16 +20,18 @@ export class CandidateListPage {
 
   ref = firebase.database().ref("people");
   candidates = [];
-  languageFilter;
-  skillFilter;
+  filter;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+    if (navParams && navParams.data) {
+      this.filter = navParams.data;
+      console.log(this.filter);
+    }
   }
 
   ionViewDidLoad() {
     this.ref.once('value', resp => {
-      this.candidates = snapshotToArray(resp);
+      this.candidates = snapshotToArray(resp, this.filter);
     });
   }
 
@@ -37,39 +39,50 @@ export class CandidateListPage {
     this.navCtrl.push(CandidateInfoPage, candidate);
   }
 
-  filterCandidates() {
-  let filterPromises = [];
-
-    if (this.languageFilter) {
-      filterPromises.concat(this.languageFilter.map(id => {
-        return this.ref.child('languages').child(id).on('value', s => s)
-      })
-      );
-    }
-
-    if (this.skillFilter) {
-      filterPromises.concat(this.skillFilter.map(id => {
-        return this.ref.child('skills').child(id).on('value', s => s)
-      })
-      );
-    }
-
-    Promise.all(filterPromises)
-      .then(resp =>
-        this.candidates = snapshotToArray(resp)
-      );
-
-      console.log("filtered candidates: ");
-      console.log(this.candidates);
-  }
-
 }
 
-export const snapshotToArray = snapshot => {
+export const snapshotToArray = (snapshot, filter) => {
   let returnArr = [];
 
   snapshot.forEach(childSnapshot => {
     let item = childSnapshot.val();
+
+    if (filter.language) {
+      var languageMatch = false;
+
+      if (item.preferredLang && (filter.language == item.preferredLang.toLowerCase())) {
+          languageMatch = true;
+      } else {
+        if (item.languages) {
+          item.languages.forEach(language => {
+            if (filter.language == language) {
+              languageMatch = true;
+            }
+          });
+        }
+      }
+
+      if (!languageMatch) {
+        return false;
+      }
+    }
+
+    if (filter.visa) {
+      var visaMatch = false;
+
+      if (item.visas) {
+        item.visas.forEach(visa => {
+          if (filter.visa == visa) {
+            visaMatch = true;
+          }
+        });
+      }
+
+      if (!visaMatch) {
+        return false;
+      }
+    }
+
     returnArr.push(item);
   });
 
