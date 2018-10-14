@@ -70,7 +70,7 @@ export class CompanyloginPage {
       visas.push("H1B2");
     }
 
-    firebase.database().ref("companies/" + username).set({
+    firebase.database().ref("companies/" + email).set({
       id: username,
       city: city,
       "company size": size,
