@@ -55,7 +55,7 @@ export class CompanyloginPage {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-    }).then(function () {
+    })
 
       firebase.auth().currentUser.updateProfile({
         displayName: "company",
@@ -112,10 +112,10 @@ export class CompanyloginPage {
         visas: visas,
         languages: languages,
         plang: form.plang,
-      }).then(function () {
+      })
         this.navCtrl.setRoot(HomePage);
-      });
-    });
+
+
 
 
 

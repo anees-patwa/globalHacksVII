@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EditUserInfoPage } from '../edit-user-info/edit-user-info';
+// import { EditUserInfoPage } from '../edit-user-info/edit-user-info';
 import { FilterCandidatePage} from '../filter-candidate/filter-candidate';
 import * as firebase from 'firebase';
 
