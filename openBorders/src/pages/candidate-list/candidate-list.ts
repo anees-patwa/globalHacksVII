@@ -46,16 +46,39 @@ export const snapshotToArray = (snapshot, filter) => {
 
   snapshot.forEach(childSnapshot => {
     let item = childSnapshot.val();
-    
+
+    if (filter.exp) {
+
+      if (!item.yearsWorked) {
+        return false;
+      }
+      
+      var yearsWorked = parseInt(item.yearsWorked);
+
+      if (isNaN(yearsWorked)) {
+        return false;
+      }
+
+      console.log(yearsWorked);
+
+      if (parseInt(filter.exp) >= yearsWorked) {
+        return false;
+      }
+    }
+
     if (filter.language) {
       var languageMatch = false;
 
-      if (item.languages) {
-        item.languages.forEach(language => {
-          if (filter.language == language) {
-            languageMatch = true;
-          }
-        });
+      if (item.preferredLang && (filter.language == item.preferredLang.toLowerCase())) {
+          languageMatch = true;
+      } else {
+        if (item.languages) {
+          item.languages.forEach(language => {
+            if (filter.language == language) {
+              languageMatch = true;
+            }
+          });
+        }
       }
 
       if (!languageMatch) {

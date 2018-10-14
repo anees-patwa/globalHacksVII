@@ -9,21 +9,62 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label>City</ion-label>
-    <ion-select [(ngModel)]="filterCand.city" interface = "popover">
-      <ion-option value="Seattle">Seattle</ion-option>
-      <ion-option value="St. Louis">St. Louis</ion-option>
-      <ion-option value="Chicago">Chicago</ion-option>
-    </ion-select>
+    <ion-input [(ngModel)]="filterCand.city" type="text" placeholder="City"></ion-input>
   </ion-item>
 
   <!--Industry -->
   <ion-item>
-    <ion-label>State</ion-label>
-    <ion-select [(ngModel)]="filterCand.state" interface = "popover">
-      <ion-option value="WA">Washington</ion-option>
-      <ion-option value="MO">Missouri</ion-option>
-      <ion-option value="IL">Illinois</ion-option>
+    <ion-select [(ngModel)]="filterCand.state">
+        <ion-option>Alabama</ion-option>
+        <ion-option>Alaska</ion-option>
+        <ion-option>Arizona</ion-option>
+        <ion-option>Arkansas</ion-option>
+        <ion-option>California</ion-option>
+        <ion-option>Colorado</ion-option>
+        <ion-option>Connecticut</ion-option>
+        <ion-option>Delaware</ion-option>
+        <ion-option>Florida</ion-option>
+        <ion-option>Georgia</ion-option>
+        <ion-option>Hawaii</ion-option>
+        <ion-option>Idaho</ion-option>
+        <ion-option>Illinois</ion-option>
+        <ion-option>Indiana</ion-option>
+        <ion-option>Iowa</ion-option>
+        <ion-option>Kansas</ion-option>
+        <ion-option>Kentucky</ion-option>
+        <ion-option>Louisiana</ion-option>
+        <ion-option>Maine</ion-option>
+        <ion-option>Maryland</ion-option>
+        <ion-option>Massachusetts</ion-option>
+        <ion-option>Michigan</ion-option>
+        <ion-option>Minnesota</ion-option>
+        <ion-option>Mississippi</ion-option>
+        <ion-option>Missouri</ion-option>
+        <ion-option>Montana</ion-option>
+        <ion-option>Nebraska</ion-option>
+        <ion-option>Nevada</ion-option>
+        <ion-option>New Hampshire</ion-option>
+        <ion-option>New Jersey</ion-option>
+        <ion-option>New Mexico</ion-option>
+        <ion-option>New York</ion-option>
+        <ion-option>North Carolina</ion-option>
+        <ion-option>North Dakota</ion-option>
+        <ion-option>Ohio</ion-option>
+        <ion-option>Oklahoma</ion-option>
+        <ion-option>Oregon</ion-option>
+        <ion-option>Pennsylvania</ion-option>
+        <ion-option>Rhode Island</ion-option>
+        <ion-option>South Carolina</ion-option>
+        <ion-option>South Dakota</ion-option>
+        <ion-option>Tennessee</ion-option>
+        <ion-option>Texas</ion-option>
+        <ion-option>Utah</ion-option>
+        <ion-option>Vermont</ion-option>
+        <ion-option>Virginia</ion-option>
+        <ion-option>Washington</ion-option>
+        <ion-option>West Virginia</ion-option>
+        <ion-option>Wisconsin</ion-option>
+        <ion-option>Wyoming</ion-option>        
     </ion-select>
   </ion-item>
 
@@ -37,8 +78,11 @@
     <ion-label>Language</ion-label>
     <ion-select [(ngModel)]="filterCand.language" interface = "popover">
       <ion-option value="english">English</ion-option>
-      <ion-option value="mandarin">Chinese (Mandarin)</ion-option>
       <ion-option value="spanish">Spanish</ion-option>
+      <ion-option value="french">French</ion-option>
+      <ion-option value="arabic">Arabic</ion-option>
+      <ion-option value="mandarin">Mandarin</ion-option>
+      <ion-option value="hindi">Hindi</ion-option>
     </ion-select>
   </ion-item>
 

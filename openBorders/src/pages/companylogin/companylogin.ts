@@ -24,10 +24,18 @@ export class CompanyloginPage {
     city: "",
     state: "",
     zip: "",
-    h1b1: "",
-    h1b2: "",
+    h1b1: false,
+    h1b2: false,
     green: "",
-    industry: ""
+    industry: "",
+    English: false,
+    French: false,
+    Spanish: false,
+    Mandarin: false,
+    Arabic: false,
+    Hindi: false,
+    plang: "",
+
   };
   ref = firebase.database().ref("companies");
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -46,49 +54,73 @@ export class CompanyloginPage {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+    }).then(function () {
+
+      firebase.auth().currentUser.updateProfile({
+        displayName: "company",
+        photoURL: "",
+      });
+      let uid = firebase.auth().currentUser.uid;
+      let username = this.form.username;
+      let size = this.form.size;
+      let location = this.form.location;
+      let city = this.form.city;
+      let state = this.form.state;
+      let zip = this.form.zip;
+      let industry = this.form.industry;
+      let h1b1 = this.form.h1b1;
+      let h1b2 = this.form.h1b2;
+
+      let visas = [];
+      if (h1b1) {
+        visas.push("H1B");
+      }
+      if (h1b2) {
+        visas.push("H2B");
+      }
+
+      let languages = [];
+      if (this.form.English) {
+        languages.push("english");
+      }
+      if (this.form.French) {
+        languages.push("french");
+      }
+      if (this.form.Spanish) {
+        languages.push("spanish");
+      }
+      if (this.form.Mandarin) {
+        languages.push("mandarin");
+      }
+      if (this.form.Arabic) {
+        languages.push("arabic");
+      }
+      if (this.form.Hindi) {
+        languages.push("hindi");
+      }
+
+      firebase.database().ref("companies/" + uid).set({
+        id: username,
+        city: city,
+        "company size": size,
+        email: email,
+        industry: industry,
+        location: location,
+        state: state,
+        zip: zip,
+        visas: visas,
+        languages: languages,
+        plang: this.form.plang,
+      }).then(function () {
+        this.navCtrl.setRoot(HomePage);
+      });
     });
 
-    firebase.auth().currentUser.updateProfile({
-      displayName: "company",
-      photoURL: "",
-    });
-    let username = this.form.username;
-    let size = this.form.size;
-    let location = this.form.location;
-    let city = this.form.city;
-    let state = this.form.state;
-    let zip = this.form.zip;
-    let industry = this.form.industry;
-    let h1b1 = this.form.h1b1;
-    let h1b2 = this.form.h1b2;
-
-    let visas = [];
-    if (h1b1) {
-      visas.push("H1B1");
-    }
-    if (h1b2) {
-      visas.push("H1B2");
-    }
-
-    firebase.database().ref("companies/" + username).set({
-      id: username,
-      city: city,
-      "company size": size,
-      email: email,
-      industry: industry,
-      location: location,
-      state: state,
-      zip: zip,
-      visas: visas,
-    })
 
 
-
-    this.navCtrl.setRoot(HomePage);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CompanyloginPage');
   }
 
 }

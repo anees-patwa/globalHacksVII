@@ -1,0 +1,46 @@
+<!--
+  Generated template for the AmbassadorListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ambassadors</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card #ambassadorInvite class="ambassador-invite" *ngIf="locationYears >= 3 && (!isAmbassador)" (click)="applyForAmbassadorship()">
+    <ion-card-content>You may qualify to be an ambassador! <strong>Click to Apply!</strong></ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let ambassador of ambassadors" (click)="getAmbassadorDetail(ambassador)">
+    <ion-item>
+      <h2>Ambassador {{ambassador.id}}</h2>
+      <ion-card-content>
+          <div *ngIf="ambassador.preferredLang">
+            Preferred Language: {{ambassador.preferredLang}}
+          </div>
+        <div *ngIf="ambassador.city && ambassador.state && ambassador.zip">
+          Test content 2
+        </div>
+      </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="globe"></ion-icon>
+          <span>{{ambassador.origin}}</span>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubbles"></ion-icon>
+          <span>{{ambassador.languages.length + 1}} Languages</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+</ion-content>
