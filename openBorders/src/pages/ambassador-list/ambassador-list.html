@@ -20,19 +20,19 @@
   <ion-card *ngFor="let ambassador of ambassadors" (click)="getAmbassadorDetail(ambassador)">
     <ion-item>
       <h2>Ambassador {{ambassador.id}}</h2>
-      <ion-card-content>Preferred Language: {{candidate.preferredLang}}</ion-card-content>
+      <ion-card-content>Preferred Language: {{ambassador.preferredLang}}</ion-card-content>
       <ion-row>
         <ion-col>
           <ion-icon name="globe"></ion-icon>
-          <span>{{candidate.origin}}</span>
+          <span>{{ambassador.origin}}</span>
         </ion-col>
         <ion-col>
           <ion-icon name="ribbon"></ion-icon>
-          <span>{{candidate.skills.length}} Skills</span>
+          <span>{{ambassador.skills.length}} Skills</span>
         </ion-col>
         <ion-col>
           <ion-icon name="chatbubbles"></ion-icon>
-          <span>{{candidate.languages.length + 1}} Languages</span>
+          <span>{{ambassador.languages.length + 1}} Languages</span>
         </ion-col>
       </ion-row>
     </ion-item>
