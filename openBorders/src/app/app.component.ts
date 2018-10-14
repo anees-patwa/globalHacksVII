@@ -28,6 +28,8 @@ import { SignoutPage } from '../pages/signout/signout';
 
 import { Events } from 'ionic-angular';
 
+import { MessagesPage } from '../pages/messages/messages';
+
 //add this import statement to any component needing firebase
 import * as firebase from 'firebase';
 
@@ -97,12 +99,12 @@ export class MyApp {
       if (firebase.auth().currentUser.displayName == "person") {
         //this.pages.push({ title: 'Companies', component: CompanyListPage });
         this.pages.push({ title: 'Companies', component: FilterCandidatePage });
-        this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage });
-
       }
 
+      this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
+      this.pages.push({ title: 'Messages', component: MessagesPage});
 
       //this.pages.push({ title: 'Messages', component: MessagesPage });
       this.pages.push({ title: 'Sign Out', component: SignoutPage });

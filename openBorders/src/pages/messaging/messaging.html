@@ -3,24 +3,17 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>Messaging</ion-title>
+    <ion-title>Send Message</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-textarea  [(ngModel)]="message" class="footer--message-input" placeholder="Type your message">
 
+    </ion-textarea>
+    <ion-item>
+    <button ion-button (click)="sendMessage()">Send</button>
+  </ion-item>
 </ion-content>
-
-<ion-footer>
-
-  <ion-toolbar>
-    <div class="footer--message-bar">
-      <ion-textarea class="footer--message-input" placeholder="Type your message">
-
-      </ion-textarea>
-      <button ion-button>Send</button>
-    </div>
-  </ion-toolbar>
-</ion-footer>
