@@ -45,7 +45,10 @@ export class PersonloginPage {
       // ...
     });
 
-    firebase.auth().currentUser.displayName = "person";
+    firebase.auth().currentUser.updateProfile({
+      displayName: "person",
+      photoURL: "",
+    })
 
     let username = this.form.username;
     let plang = this.form.plang;
