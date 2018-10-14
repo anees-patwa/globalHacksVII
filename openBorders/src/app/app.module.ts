@@ -37,6 +37,8 @@ import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-deta
 
 import { MessagesPage } from '../pages/messages/messages';
 
+import{ ChatHistoryPage } from '../pages/chat-history/chat-history';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -60,7 +62,8 @@ import { MessagesPage } from '../pages/messages/messages';
     AmbassadorListPage,
     AmbassadorDetailPage,
     MessagesPage,
-    EditCompanyInfoPage
+    EditCompanyInfoPage,
+    ChatHistoryPage
   ],
   imports: [
     BrowserModule,
@@ -89,7 +92,8 @@ import { MessagesPage } from '../pages/messages/messages';
     EditUserInfoPage,
     AmbassadorListPage,
     AmbassadorDetailPage,
-    EditCompanyInfoPage
+    EditCompanyInfoPage,
+    ChatHistoryPage
   ],
   providers: [
     StatusBar,
