@@ -63,8 +63,9 @@ export class MessagesPage {
         partnerids.forEach(partner => {
           var person = firebase.database().ref('people/' + partner);
           person.once('value', p => {
-
-            page.partners.push(p.val());
+            var item = p.val();
+            item.key =p.key;
+            page.partners.push(item);
           })
         })
       } 
