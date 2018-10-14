@@ -14,33 +14,32 @@
   </ion-navbar>
 
 </ion-header>
-
 <ion-content padding>
-    <ion-card *ngFor="let partner of partners" (click)="getMessageHistory(partner)">
-        <ion-item>
-          <h2>{{partner.id}}</h2>
-          <ion-card-content>
-            <div *ngIf="partner.preferredLang">
-              Preferred Language: {{partner.preferredLang}}
-            </div>
-            <div *ngIf="partner.city && partner.state && partner.zip">
-              Location: {{partner.city}}, {{partner.state}}, {{partner.zip}}
-            </div>
-          </ion-card-content>
-          <ion-row>
-            <ion-col *ngIf="partner.location">
-                <ion-icon name="map"></ion-icon>
-                <span>{{partner.location}}</span>
-              </ion-col>
-            <ion-col>
-              <ion-icon name="globe"></ion-icon>
-              <span>{{partner.origin}}</span>
-            </ion-col>
-            <ion-col>
-              <ion-icon name="chatbubbles"></ion-icon>
-              <span>{{partner.languages? partner.languages.length + 1: 1}} Languages</span>
-            </ion-col>
-          </ion-row>
-        </ion-item>
-      </ion-card>
+  <ion-card *ngFor="let partner of partners" (click)="getMessageHistory(partner)">
+    <ion-item>
+      <h2>{{partner.id}}</h2>
+      <ion-card-content>
+        <div *ngIf="partner.preferredLang">
+          Preferred Language: {{partner.preferredLang}}
+        </div>
+        <div *ngIf="partner.city && partner.state && partner.zip">
+          Location: {{partner.city}}, {{partner.state}}, {{partner.zip}}
+        </div>
+      </ion-card-content>
+      <ion-row>
+        <ion-col *ngIf="partner.location">
+          <ion-icon name="map"></ion-icon>
+          <span>{{partner.location}}</span>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="globe"></ion-icon>
+          <span>{{partner.origin}}</span>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubbles"></ion-icon>
+          <span>{{partner.languages? partner.languages.length + 1: 1}} Languages</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
 </ion-content>

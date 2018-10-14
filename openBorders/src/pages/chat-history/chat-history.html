@@ -7,12 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>chat-history</ion-title>
+    <ion-title>Chat History</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <h3>{{partner.id}}</h3>
+  <ion-card *ngFor="let message of messages">
+    <ion-item  *ngIf="message.sender == myuid" class="senderSelf">
+      {{message.message}}
+    </ion-item>
+    <ion-item *ngIf="message.recipient == myuid">
+        {{message.message}}
+    </ion-item>
+  </ion-card>
+    <hr />
+    <ion-textarea  [(ngModel)]="message" placeholder="Type your message">
 
+    </ion-textarea>
+    <button ion-button (click)="sendMessage()">Send</button>
 </ion-content>
