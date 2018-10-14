@@ -16,7 +16,7 @@
   </ion-header>
 
 <ion-content padding>
-  <h3>{{partner.id}}</h3>
+  <h3>{{partner? partner.id: null}}</h3>
   <ion-card *ngFor="let message of messages">
     <ion-item *ngIf="message.sender == myuid" class="senderSelf">
       {{message.message}}
