@@ -15,6 +15,7 @@ import { HomeTempPage } from '../home-temp/home-temp';
   templateUrl: 'companylogin.html',
 })
 export class CompanyloginPage {
+
   form = {
     email: "",
     password: "",
@@ -39,7 +40,6 @@ export class CompanyloginPage {
   };
   ref = firebase.database().ref("companies");
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
-    //this.navCtrl = navCtrl;
 
   }
 

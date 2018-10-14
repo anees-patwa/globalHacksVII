@@ -55,10 +55,13 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public events: Events) {
 
+
+    firebase.initializeApp(config);
+
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.populatePages();
+      this.populatePages();
 
     events.subscribe('user:login', () => {
       this.populatePages();
@@ -67,14 +70,17 @@ export class MyApp {
   }
 
   initializeApp() {
+
+
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
     });
 
-    firebase.initializeApp(config);
+    
   }
 
   openPage(page) {

@@ -1,3 +1,8 @@
-page-company-list {
+.button-liked {
+    background-color: color($colors, primary);
+}
 
+.button-notliked {
+    background-color: color($colors, light);
+    color: color($colors, primary);
 }
