@@ -102,6 +102,7 @@ export const snapshotToArray = (snapshot, filter) => {
       }
     }
 
+    item.key = childSnapshot.key;
     returnArr.push(item);
   });
 

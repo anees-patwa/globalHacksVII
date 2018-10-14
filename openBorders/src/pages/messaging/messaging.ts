@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import * as firebase from 'firebase';
 
-import { MessagesPage } from '../messages/messages';
+import { ChatHistoryPage } from '../chat-history/chat-history';
 
 /**
  * Generated class for the MessagingPage page.
@@ -39,7 +39,7 @@ export class MessagingPage {
         sender: firebase.auth().currentUser.uid,
         message: this.message
       }).then(function () {
-        page.navCtrl.push(MessagesPage);
+        page.navCtrl.setRoot(ChatHistoryPage, page.recipient);
       });
     }
   }

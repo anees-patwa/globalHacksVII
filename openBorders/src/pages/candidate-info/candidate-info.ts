@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ChatHistoryPage } from '../chat-history/chat-history'
+
 /**
  * Generated class for the CandidateInfoPage page.
  *
@@ -27,7 +29,7 @@ export class CandidateInfoPage {
   }
 
   contactCandidate() {
-    console.log('contactCandidate clicked');
+    this.navCtrl.setRoot(ChatHistoryPage, this.candidate);
   }
 
 }

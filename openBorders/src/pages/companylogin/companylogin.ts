@@ -40,7 +40,6 @@ export class CompanyloginPage {
   };
   ref = firebase.database().ref("companies");
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
-    // this.navCtrl = navCtrl;
 
   }
 
@@ -59,65 +58,65 @@ export class CompanyloginPage {
       var errorMessage = error.message;
     })
 
-      firebase.auth().currentUser.updateProfile({
-        displayName: "company",
-        photoURL: "",
-      });
-      let uid = firebase.auth().currentUser.uid;
-      let username = form.username;
-      let size = form.size;
-      let location = form.location;
-      let city = form.city;
-      let state = form.state;
-      let zip = form.zip;
-      let industry = form.industry;
-      let h1b1 = form.h1b1;
-      let h1b2 = form.h1b2;
+    firebase.auth().currentUser.updateProfile({
+      displayName: "company",
+      photoURL: "",
+    });
+    let uid = firebase.auth().currentUser.uid;
+    let username = form.username;
+    let size = form.size;
+    let location = form.location;
+    let city = form.city;
+    let state = form.state;
+    let zip = form.zip;
+    let industry = form.industry;
+    let h1b1 = form.h1b1;
+    let h1b2 = form.h1b2;
 
-      let visas = [];
-      if (h1b1) {
-        visas.push("H1B");
-      }
-      if (h1b2) {
-        visas.push("H2B");
-      }
+    let visas = [];
+    if (h1b1) {
+      visas.push("H1B");
+    }
+    if (h1b2) {
+      visas.push("H2B");
+    }
 
-      let languages = [];
-      if (form.English) {
-        languages.push("english");
-      }
-      if (form.French) {
-        languages.push("french");
-      }
-      if (form.Spanish) {
-        languages.push("spanish");
-      }
-      if (form.Mandarin) {
-        languages.push("mandarin");
-      }
-      if (form.Arabic) {
-        languages.push("arabic");
-      }
-      if (form.Hindi) {
-        languages.push("hindi");
-      }
+    let languages = [];
+    if (form.English) {
+      languages.push("english");
+    }
+    if (form.French) {
+      languages.push("french");
+    }
+    if (form.Spanish) {
+      languages.push("spanish");
+    }
+    if (form.Mandarin) {
+      languages.push("mandarin");
+    }
+    if (form.Arabic) {
+      languages.push("arabic");
+    }
+    if (form.Hindi) {
+      languages.push("hindi");
+    }
 
-      firebase.database().ref("companies/" + uid).set({
-        id: username,
-        city: city,
-        "company size": size,
-        email: email,
-        industry: industry,
-        location: location,
-        state: state,
-        zip: zip,
-        visas: visas,
-        languages: languages,
-        plang: form.plang,
-      }).then(()=>{
-        events.publish("user:login");
-        this.navCtrl.setRoot(HomeTempPage);
-      });
+    firebase.database().ref("companies/" + uid).set({
+      id: username,
+      city: city,
+      "company size": size,
+      email: email,
+      industry: industry,
+      location: location,
+      state: state,
+      zip: zip,
+      visas: visas,
+      languages: languages,
+      plang: form.plang,
+    }).then(() => {
+      this.events.publish("user:login");
+      this.navCtrl.setRoot(HomeTempPage);
+    });
 
 
 
