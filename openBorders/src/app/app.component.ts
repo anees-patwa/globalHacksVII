@@ -85,9 +85,7 @@ export class MyApp {
   }
 
   populatePages() {
-    this.pages = [
-      { title: 'Home', component: HomePage }
-    ];
+    this.pages = [];
 
     // { title: 'Candidates', component: CandidateListPage },
     // { title: 'CompanyLogin', component: CompanyloginPage },
@@ -112,8 +110,8 @@ export class MyApp {
       //this.pages.push({ title: 'Messages', component: MessagesPage });
       this.pages.push({ title: 'Sign Out', component: SignoutPage });
     } else {
+      this.pages.push({ title: 'Home', component: HomePage });
       this.pages.push({ title: 'Companies', component: FilterCandidatePage });
-      this.pages.push({ title: 'Login', component: PersonSignupPage });
     }
 
   }

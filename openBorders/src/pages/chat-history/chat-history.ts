@@ -49,6 +49,7 @@ export class ChatHistoryPage {
     })).then(() => {
       console.log(page.messages);
     });
+
   }
 
   
@@ -66,6 +67,10 @@ export class ChatHistoryPage {
         page.getMessages();
       });
     }
+  }
+
+  refreshMessages() {
+    this.getMessages();
   }
 
 }

@@ -15,7 +15,6 @@ import { HomeTempPage } from '../home-temp/home-temp';
   templateUrl: 'companylogin.html',
 })
 export class CompanyloginPage {
-  //navCtrl;
   form = {
     email: "",
     password: "",
