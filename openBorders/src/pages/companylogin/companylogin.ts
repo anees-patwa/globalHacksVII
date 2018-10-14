@@ -15,7 +15,6 @@ import { HomeTempPage } from '../home-temp/home-temp';
   templateUrl: 'companylogin.html',
 })
 export class CompanyloginPage {
-  navCtrl;
   form = {
     email: "",
     password: "",
@@ -40,8 +39,6 @@ export class CompanyloginPage {
   };
   ref = firebase.database().ref("companies");
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
-    this.navCtrl = navCtrl;
-
   }
 
   /*goToHome() {
@@ -115,7 +112,7 @@ export class CompanyloginPage {
         languages: languages,
         plang: form.plang,
       }).then(()=>{
-        events.publish("user:login");
+        this.events.publish("user:login");
         this.navCtrl.setRoot(HomeTempPage);
       });
 
