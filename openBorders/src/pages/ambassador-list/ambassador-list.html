@@ -24,14 +24,18 @@
     <ion-item>
       <h2>Ambassador {{ambassador.id}}</h2>
       <ion-card-content>
-          <div *ngIf="ambassador.preferredLang">
-            Preferred Language: {{ambassador.preferredLang}}
-          </div>
+        <div *ngIf="ambassador.preferredLang">
+          Preferred Language: {{ambassador.preferredLang}}
+        </div>
         <div *ngIf="ambassador.city && ambassador.state && ambassador.zip">
-          Test content 2
+          Location: {{ambassador.city}}, {{ambassador.state}}, {{ambassador.zip}}
         </div>
       </ion-card-content>
       <ion-row>
+        <ion-col *ngIf="ambassador.location">
+            <ion-icon name="map"></ion-icon>
+            <span>{{ambassador.location}}</span>
+          </ion-col>
         <ion-col>
           <ion-icon name="globe"></ion-icon>
           <span>{{ambassador.origin}}</span>

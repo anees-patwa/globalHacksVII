@@ -26,17 +26,15 @@ export class AmbassadorListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.me.once('value', resp => {
       var val = resp.val();
-      console.log(val);
 
-      if (val && val.locationYears) {
-        this.locationYears = parseInt(val.locationYears);
+      if (val) {
+        if (val.locationYears) {
+          this.locationYears = parseInt(val.locationYears);
+        }
+        if (val.ambassador) {
+          this.isAmbassador = val.ambassador;
+        }
       }
-      if (val.ambassador) {
-        this.isAmbassador = val.ambassador;
-      }
-
-      console.log(this.locationYears);
-      console.log(this.isAmbassador);
     });
   }
 
@@ -46,10 +44,14 @@ export class AmbassadorListPage {
   }
 
   getAmbassadors() {
+    var myuid = firebase.auth().currentUser.uid;
+
     this.ref.once('value', resp => {
-      this.ambassadors = snapshotToArray(resp);
+      if (resp) {
+        this.ambassadors = snapshotToArray(resp);
+      }
     }).then(() => this.ambassadors = this.ambassadors.filter(function (item) {
-      return item.ambassador != false;
+      return item.ambassador != false && item.key != myuid;
     })).then(() => console.log(this.ambassadors));
 
   }
@@ -64,7 +66,7 @@ export class AmbassadorListPage {
     this.me.update({"ambassador": true});
 
     this.isAmbassador = true;
-    
+
     this.getAmbassadors();
   }
 
@@ -74,7 +76,9 @@ export const snapshotToArray = snapshot => {
   let returnArr = [];
 
   snapshot.forEach(childSnapshot => {
+    //console.log(childSnapshot.key);
     let item = childSnapshot.val();
+    item.key = childSnapshot.key;
     returnArr.push(item);
   });
 

@@ -20,13 +20,16 @@ import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-deta
 // import { PersonloginPage } from '../pages/personlogin/personlogin';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
+import { EditUserInfoPage } from '../pages/edit-user-info/edit-user-info';
 
 
 //import { CompanyListPage } from '../pages/company-list/company-list';
 import { SignoutPage } from '../pages/signout/signout';
-
+import {EditCompanyInfoPage} from '../pages/edit-company-info/edit-company-info';
 
 import { Events } from 'ionic-angular';
+
+import { MessagesPage } from '../pages/messages/messages';
 
 //add this import statement to any component needing firebase
 import * as firebase from 'firebase';
@@ -97,12 +100,14 @@ export class MyApp {
       if (firebase.auth().currentUser.displayName == "person") {
         //this.pages.push({ title: 'Companies', component: CompanyListPage });
         this.pages.push({ title: 'Companies', component: FilterCandidatePage });
-        this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
+        this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage });
-
+        this.pages.push({ title: 'Edit Company', component: EditCompanyInfoPage});
       }
 
+      this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
+      this.pages.push({ title: 'Messages', component: MessagesPage});
 
       //this.pages.push({ title: 'Messages', component: MessagesPage });
       this.pages.push({ title: 'Sign Out', component: SignoutPage });

@@ -1,0 +1,102 @@
+<!--
+  Generated template for the EditUserInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Edit User</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <form (ngSubmit)="editCompany()">
+    <ion-list>
+
+
+      <ion-item>
+        <ion-label floating >Size</ion-label>
+        <ion-input type="text" [(ngModel)]="form.size" name="size" id="size"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >Location</ion-label>
+        <ion-input type="text" [(ngModel)]="form.location" name="location" id="location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >City</ion-label>
+        <ion-input type="text" [(ngModel)]="form.city" name="city" id="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >State</ion-label>
+        <ion-input type="text" [(ngModel)]="form.state" name="state" id="state"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >Zip</ion-label>
+        <ion-input type="text" [(ngModel)]="form.zip" name="zip" id="zip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating >Industry</ion-label>
+        <ion-input type="text" [(ngModel)]="form.industry" name="industry" id="industry"></ion-input>
+      </ion-item>
+      <!-- Languages -->
+      <h3>Languages</h3>
+      <ion-item>
+        <ion-label floating>Preferred Language</ion-label>
+        <ion-input color="light" [(ngModel)]="form.plang" name="plang" id="plang"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>English</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.English" name="English"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Spanish</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Spanish" name="Spanish"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>French</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.French" name="French"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Arabic</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Arabic" name="Arabic"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mandarin</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Mandarin" name="Mandarin"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hindi</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.Hindi" name="Hindi"></ion-checkbox>
+      </ion-item>
+
+<!-- Visa section -->
+      <ion-item>
+        <ion-label>Sponsor H1B1</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.h1b1" name="h1b1" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sponsor H1B2</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.h1b2" name="h1b2"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sponsor Green Card</ion-label>
+        <ion-checkbox color="light" [(ngModel)]="form.green" name="green"></ion-checkbox>
+      </ion-item>
+
+      <button ion-button full type="submit">Update</button>
+    </ion-list>
+  </form>
+</ion-content>
