@@ -12,6 +12,8 @@ import { CompanyListPage } from '../pages/company-list/company-list';
 import { HomeTempPage } from '../pages/home-temp/home-temp';
 import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
 import { PopoverPage } from '../pages/popover/popover';
+import { AmbassadorListPage } from '../pages/ambassador-list/ambassador-list';
+import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-detail';
 
 // import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 // import { CompanyloginPage } from '../pages/companylogin/companylogin';
@@ -53,7 +55,6 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-
     this.populatePages();
 
     events.subscribe('user:login', () => {
@@ -93,20 +94,22 @@ export class MyApp {
     // { title: 'Companies', component: CompanyListPage }
 
     if (firebase.auth().currentUser) {
-      console.log(firebase.auth().currentUser.displayName);
-      if(firebase.auth().currentUser.displayName == "person") {
-        this.pages.push({ title: 'Companies', component: FilterCandidatePage});
+      if (firebase.auth().currentUser.displayName == "person") {
+        //this.pages.push({ title: 'Companies', component: CompanyListPage });
+        this.pages.push({ title: 'Companies', component: FilterCandidatePage });
+        this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
       } else {
-        this.pages.push({ title: 'Candidates', component: HomeTempPage});
-      } 
+        this.pages.push({ title: 'Candidates', component: HomeTempPage });
 
-      
+      }
+
+
       //this.pages.push({ title: 'Messages', component: MessagesPage });
-      this.pages.push({ title: 'Sign Out', component: SignoutPage});
+      this.pages.push({ title: 'Sign Out', component: SignoutPage });
     } else {
-      this.pages.push({ title: 'Companies', component: FilterCandidatePage});
+      this.pages.push({ title: 'Companies', component: FilterCandidatePage });
       this.pages.push({ title: 'Login', component: PersonSignupPage });
     }
-    
+
   }
 }
