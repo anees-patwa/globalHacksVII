@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ChatHistoryPage } from '../chat-history/chat-history'
+
 /**
  * Generated class for the CompanyInfoPage page.
  *
@@ -20,12 +22,15 @@ export class CompanyInfoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.company = navParams.data;
-    console.log(this.company);
     this.email = "mailto::" + this.company.email;
   }
 
   ionViewDidLoad() {
     
+  }
+
+  contactCompany() {
+    this.navCtrl.push(ChatHistoryPage, this.company);
   }
 
 }

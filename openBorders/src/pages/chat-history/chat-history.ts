@@ -40,14 +40,24 @@ export class ChatHistoryPage {
     var partnerid = this.partner.key;
     var messages = [];
 
-    this.ref.once('value', resp => {
+    // this.ref.once('value', resp => {
+    //   if (resp) {
+    //     messages = snapshotToArray(resp);
+    //   }
+    // }).then(() => page.messages = messages.filter(function (item) {
+    //   return (item.sender == page.myuid && item.recipient == partnerid) || (item.recipient == page.myuid && item.sender == partnerid);
+    // })).then(() => {
+    //   console.log(page.messages);
+    // });
+
+    this.ref.on('value', resp=> {
       if (resp) {
         messages = snapshotToArray(resp);
+
+        page.messages = messages.filter(function (item) {
+          return (item.sender == page.myuid && item.recipient == partnerid) || (item.recipient == page.myuid && item.sender == partnerid);
+        });
       }
-    }).then(() => page.messages = messages.filter(function (item) {
-      return (item.sender == page.myuid && item.recipient == partnerid) || (item.recipient == page.myuid && item.sender == partnerid);
-    })).then(() => {
-      console.log(page.messages);
     });
   }
 
@@ -66,6 +76,10 @@ export class ChatHistoryPage {
         page.getMessages();
       });
     }
+  }
+
+  refreshMessages() {
+    this.getMessages();
   }
 
 }

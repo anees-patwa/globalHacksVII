@@ -63,10 +63,25 @@ export class MessagesPage {
         partnerids.forEach(partner => {
           var person = firebase.database().ref('people/' + partner);
           person.once('value', p => {
-            var item = p.val();
-            item.key =p.key;
-            page.partners.push(item);
-          })
+            if (p) {
+              var item = p.val();
+              if (item) {
+                item.key = p.key;
+                page.partners.push(item);
+              }
+            }
+          });
+
+          var company = firebase.database().ref('companies/' + partner);
+          company.once('value', p => {
+            if (p) {
+              var item = p.val();
+              if (item) {
+                item.key = p.key;
+                page.partners.push(item);
+              }
+            }
+          });
         })
       } 
 
@@ -87,7 +102,6 @@ export const snapshotToArray = snapshot => {
   let returnArr = [];
 
   snapshot.forEach(childSnapshot => {
-    //console.log(childSnapshot.key);
     let item = childSnapshot.val();
     returnArr.push(item);
   });
