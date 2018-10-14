@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Open Board</ion-title>
+    <ion-title>Company Search</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -29,16 +29,16 @@
 
   <!-- Years of Experience-->
   <ion-item>
-    <ion-input name ="filterCand.zip" type="number" placeholder="Zip"></ion-input>
+    <ion-input [(ngModel)]="filterCand.zip" type="number" placeholder="Zip"></ion-input>
   </ion-item>
 
   <!-- Language -->
   <ion-item>
     <ion-label>Language</ion-label>
     <ion-select [(ngModel)]="filterCand.language" interface = "popover">
-      <ion-option value="EN">English</ion-option>
-      <ion-option value="CH">Chinese (Simplified)</ion-option>
-      <ion-option value="SP">Spanish</ion-option>
+      <ion-option value="english">English</ion-option>
+      <ion-option value="mandarin">Chinese (Mandarin)</ion-option>
+      <ion-option value="spanish">Spanish</ion-option>
     </ion-select>
   </ion-item>
 

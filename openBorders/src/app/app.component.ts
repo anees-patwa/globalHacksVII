@@ -105,8 +105,8 @@ export class MyApp {
     // { title: 'Companies', component: CompanyListPage }
 
     if (firebase.auth().currentUser) {
+      console.log(firebase.auth().currentUser.displayName);
       if(firebase.auth().currentUser.displayName == "person") {
-        //this.pages.push({ title: 'Companies', component: CompanyListPage });
         this.pages.push({ title: 'Companies', component: FilterCandidatePage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage});
@@ -116,6 +116,7 @@ export class MyApp {
       //this.pages.push({ title: 'Messages', component: MessagesPage });
       this.pages.push({ title: 'Sign Out', component: SignoutPage});
     } else {
+      this.pages.push({ title: 'Companies', component: FilterCandidatePage});
       this.pages.push({ title: 'Login', component: PersonSignupPage });
       this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
     }
