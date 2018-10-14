@@ -4,18 +4,28 @@
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <button ion-button (click)="logIn()" id = "log" top right>
-      Log-In
-    </button>
 
-
-    <button ion-button  (click)="presentPopover($event)">
-      Sign-Up
-    </button>
   </ion-navbar>
 </ion-header>
 
 <!-- Jason's filter goes for content -->
 <ion-content padding>
-  <h1>List Title</h1>
+  <ion-grid>
+    <ion-row align-items-end>
+      <ion-col>
+        <button ion-button (click)="logIn()" id="log" top right>
+          Log-In
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button (click)="presentPopover($event)">
+          Sign-Up
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
 </ion-content>

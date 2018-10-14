@@ -30,6 +30,7 @@ export class PersonloginPage {
     h1b1: false,
     h1b2: false,
     green: false,
+    workexp: null
   };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -45,8 +46,12 @@ export class PersonloginPage {
       // ...
     });
 
-    firebase.auth().currentUser.displayName = "person";
+    firebase.auth().currentUser.updateProfile({
+      displayName: "person",
+      photoURL: "",
+    })
 
+    let workexp = this.form.workexp;
     let username = this.form.username;
     let plang = this.form.plang;
     let origin = this.form.origin;
@@ -88,7 +93,8 @@ export class PersonloginPage {
       languages: languages,
       origin: origin,
       preferredLang: plang,
-      visas: visas
+      visas: visas,
+      workexp: workexp
     });
 
 
