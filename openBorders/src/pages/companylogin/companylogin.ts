@@ -48,7 +48,10 @@ export class CompanyloginPage {
       var errorMessage = error.message;
     });
 
-    firebase.auth().currentUser.displayName = "company";
+    firebase.auth().currentUser.updateProfile({
+      displayName: "company",
+      photoURL: "",
+    });
     let username = this.form.username;
     let size = this.form.size;
     let location = this.form.location;
