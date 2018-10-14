@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import * as firebase from 'firebase';
-import { HomePage } from '../home/home';
+import { HomeTempPage } from '../home-temp/home-temp';
 /**
  * Generated class for the CompanyloginPage page.
  *
@@ -15,6 +15,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'companylogin.html',
 })
 export class CompanyloginPage {
+  navCtrl;
   form = {
     email: "",
     password: "",
@@ -38,7 +39,8 @@ export class CompanyloginPage {
 
   };
   ref = firebase.database().ref("companies");
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
+    this.navCtrl = navCtrl;
 
   }
 
@@ -55,7 +57,7 @@ export class CompanyloginPage {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-    }).then(function () {
+    })
 
       firebase.auth().currentUser.updateProfile({
         displayName: "company",
@@ -112,10 +114,12 @@ export class CompanyloginPage {
         visas: visas,
         languages: languages,
         plang: form.plang,
-      }).then(function () {
-        this.navCtrl.setRoot(HomePage);
+      }).then(()=>{
+        events.publish("user:login");
+        this.navCtrl.setRoot(HomeTempPage);
       });
-    });
+
+
 
 
 
