@@ -17,10 +17,20 @@
 
 
 <ion-content padding>
+  <ion-card #ambassadorInvite class="ambassador-invite" *ngIf="locationYears >= 3 && (!isAmbassador)" (click)="applyForAmbassadorship()">
+    <ion-card-content>You may qualify to be an ambassador! <strong>Click to Apply!</strong></ion-card-content>
+  </ion-card>
   <ion-card *ngFor="let ambassador of ambassadors" (click)="getAmbassadorDetail(ambassador)">
     <ion-item>
       <h2>Ambassador {{ambassador.id}}</h2>
-      <ion-card-content>Preferred Language: {{ambassador.preferredLang}}</ion-card-content>
+      <ion-card-content>
+          <div *ngIf="ambassador.preferredLang">
+            Preferred Language: {{ambassador.preferredLang}}
+          </div>
+        <div *ngIf="ambassador.city && ambassador.state && ambassador.zip">
+          Test content 2
+        </div>
+      </ion-card-content>
       <ion-row>
         <ion-col>
           <ion-icon name="globe"></ion-icon>

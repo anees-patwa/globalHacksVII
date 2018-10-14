@@ -49,19 +49,19 @@ export const snapshotToArray = (snapshot, filter) => {
 
     if (filter.exp) {
 
-      if (!item.workexp) {
+      if (!item.yearsWorked) {
         return false;
       }
       
-      var workexp = parseInt(item.workexp);
+      var yearsWorked = parseInt(item.yearsWorked);
 
-      if (isNaN(workexp)) {
+      if (isNaN(yearsWorked)) {
         return false;
       }
 
-      console.log(workexp);
+      console.log(yearsWorked);
 
-      if (parseInt(filter.exp) >= workexp) {
+      if (parseInt(filter.exp) >= yearsWorked) {
         return false;
       }
     }

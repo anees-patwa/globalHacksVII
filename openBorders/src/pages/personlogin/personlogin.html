@@ -31,72 +31,321 @@
 
       <ion-item>
         <ion-label floating>Origin</ion-label>
-        <ion-input type="text" required [(ngModel)]="form.origin" name="origin"></ion-input>
+        <ion-select [(ngModel)]="form.origin" name="origin">
+          <ion-option>Afghanistan</ion-option>
+          <ion-option>Albania</ion-option>
+          <ion-option>Algeria</ion-option>
+          <ion-option>Andorra</ion-option>
+          <ion-option>Angola</ion-option>
+          <ion-option>Antigua & Deps</ion-option>
+          <ion-option>Argentina</ion-option>
+          <ion-option>Armenia</ion-option>
+          <ion-option>Australia</ion-option>
+          <ion-option>Austria</ion-option>
+          <ion-option>Azerbaijan</ion-option>
+          <ion-option>Bahamas</ion-option>
+          <ion-option>Bahrain</ion-option>
+          <ion-option>Bangladesh</ion-option>
+          <ion-option>Barbados</ion-option>
+          <ion-option>Belarus</ion-option>
+          <ion-option>Belgium</ion-option>
+          <ion-option>Belize</ion-option>
+          <ion-option>Benin</ion-option>
+          <ion-option>Bhutan</ion-option>
+          <ion-option>Bolivia</ion-option>
+          <ion-option>Bosnia Herzegovina</ion-option>
+          <ion-option>Botswana</ion-option>
+          <ion-option>Brazil</ion-option>
+          <ion-option>Brunei</ion-option>
+          <ion-option>Bulgaria</ion-option>
+          <ion-option>Burkina</ion-option>
+          <ion-option>Burundi</ion-option>
+          <ion-option>Cambodia</ion-option>
+          <ion-option>Cameroon</ion-option>
+          <ion-option>Canada</ion-option>
+          <ion-option>Cape Verde</ion-option>
+          <ion-option>Central African Rep</ion-option>
+          <ion-option>Chad</ion-option>
+          <ion-option>Chile</ion-option>
+          <ion-option>China</ion-option>
+          <ion-option>Colombia</ion-option>
+          <ion-option>Comoros</ion-option>
+          <ion-option>Congo</ion-option>
+          <ion-option>Congo (Democratic Rep)</ion-option>
+          <ion-option>Costa Rica</ion-option>
+          <ion-option>Croatia</ion-option>
+          <ion-option>Cuba</ion-option>
+          <ion-option>Cyprus</ion-option>
+          <ion-option>Czech Republic</ion-option>
+          <ion-option>Denmark</ion-option>
+          <ion-option>Djibouti</ion-option>
+          <ion-option>Dominica</ion-option>
+          <ion-option>Dominican Republic</ion-option>
+          <ion-option>East Timor</ion-option>
+          <ion-option>Ecuador</ion-option>
+          <ion-option>Egypt</ion-option>
+          <ion-option>El Salvador</ion-option>
+          <ion-option>Equatorial Guinea</ion-option>
+          <ion-option>Eritrea</ion-option>
+          <ion-option>Estonia</ion-option>
+          <ion-option>Ethiopia</ion-option>
+          <ion-option>Fiji</ion-option>
+          <ion-option>Finland</ion-option>
+          <ion-option>France</ion-option>
+          <ion-option>Gabon</ion-option>
+          <ion-option>Gambia</ion-option>
+          <ion-option>Georgia</ion-option>
+          <ion-option>Germany</ion-option>
+          <ion-option>Ghana</ion-option>
+          <ion-option>Greece</ion-option>
+          <ion-option>Grenada</ion-option>
+          <ion-option>Guatemala</ion-option>
+          <ion-option>Guinea</ion-option>
+          <ion-option>Guinea-Bissau</ion-option>
+          <ion-option>Guyana</ion-option>
+          <ion-option>Haiti</ion-option>
+          <ion-option>Honduras</ion-option>
+          <ion-option>Hungary</ion-option>
+          <ion-option>Iceland</ion-option>
+          <ion-option>India</ion-option>
+          <ion-option>Indonesia</ion-option>
+          <ion-option>Iran</ion-option>
+          <ion-option>Iraq</ion-option>
+          <ion-option>Ireland (Republic)</ion-option>
+          <ion-option>Israel</ion-option>
+          <ion-option>Italy</ion-option>
+          <ion-option>Ivory Coast</ion-option>
+          <ion-option>Jamaica</ion-option>
+          <ion-option>Japan</ion-option>
+          <ion-option>Jordan</ion-option>
+          <ion-option>Kazakhstan</ion-option>
+          <ion-option>Kenya</ion-option>
+          <ion-option>Kiribati</ion-option>
+          <ion-option>Korea North</ion-option>
+          <ion-option>Korea South</ion-option>
+          <ion-option>Kosovo</ion-option>
+          <ion-option>Kuwait</ion-option>
+          <ion-option>Kyrgyzstan</ion-option>
+          <ion-option>Laos</ion-option>
+          <ion-option>Latvia</ion-option>
+          <ion-option>Lebanon</ion-option>
+          <ion-option>Lesotho</ion-option>
+          <ion-option>Liberia</ion-option>
+          <ion-option>Libya</ion-option>
+          <ion-option>Liechtenstein</ion-option>
+          <ion-option>Lithuania</ion-option>
+          <ion-option>Luxembourg</ion-option>
+          <ion-option>Macedonia</ion-option>
+          <ion-option>Madagascar</ion-option>
+          <ion-option>Malawi</ion-option>
+          <ion-option>Malaysia</ion-option>
+          <ion-option>Maldives</ion-option>
+          <ion-option>Mali</ion-option>
+          <ion-option>Malta</ion-option>
+          <ion-option>Marshall Islands</ion-option>
+          <ion-option>Mauritania</ion-option>
+          <ion-option>Mauritius</ion-option>
+          <ion-option>Mexico</ion-option>
+          <ion-option>Micronesia</ion-option>
+          <ion-option>Moldova</ion-option>
+          <ion-option>Monaco</ion-option>
+          <ion-option>Mongolia</ion-option>
+          <ion-option>Montenegro</ion-option>
+          <ion-option>Morocco</ion-option>
+          <ion-option>Mozambique</ion-option>
+          <ion-option>Myanmar, (Burma)</ion-option>
+          <ion-option>Namibia</ion-option>
+          <ion-option>Nauru</ion-option>
+          <ion-option>Nepal</ion-option>
+          <ion-option>Netherlands</ion-option>
+          <ion-option>New Zealand</ion-option>
+          <ion-option>Nicaragua</ion-option>
+          <ion-option>Niger</ion-option>
+          <ion-option>Nigeria</ion-option>
+          <ion-option>Norway</ion-option>
+          <ion-option>Oman</ion-option>
+          <ion-option>Pakistan</ion-option>
+          <ion-option>Palau</ion-option>
+          <ion-option>Panama</ion-option>
+          <ion-option>Papua New Guinea</ion-option>
+          <ion-option>Paraguay</ion-option>
+          <ion-option>Peru</ion-option>
+          <ion-option>Philippines</ion-option>
+          <ion-option>Poland</ion-option>
+          <ion-option>Portugal</ion-option>
+          <ion-option>Qatar</ion-option>
+          <ion-option>Romania</ion-option>
+          <ion-option>Russian Federation</ion-option>
+          <ion-option>Rwanda</ion-option>
+          <ion-option>St Kitts & Nevis</ion-option>
+          <ion-option>St Lucia</ion-option>
+          <ion-option>Saint Vincent & the Grenadines</ion-option>
+          <ion-option>Samoa</ion-option>
+          <ion-option>San Marino</ion-option>
+          <ion-option>Sao Tome & Principe</ion-option>
+          <ion-option>Saudi Arabia</ion-option>
+          <ion-option>Senegal</ion-option>
+          <ion-option>Serbia</ion-option>
+          <ion-option>Seychelles</ion-option>
+          <ion-option>Sierra Leone</ion-option>
+          <ion-option>Singapore</ion-option>
+          <ion-option>Slovakia</ion-option>
+          <ion-option>Slovenia</ion-option>
+          <ion-option>Solomon Islands</ion-option>
+          <ion-option>Somalia</ion-option>
+          <ion-option>South Africa</ion-option>
+          <ion-option>South Sudan</ion-option>
+          <ion-option>Spain</ion-option>
+          <ion-option>Sri Lanka</ion-option>
+          <ion-option>Sudan</ion-option>
+          <ion-option>Suriname</ion-option>
+          <ion-option>Swaziland</ion-option>
+          <ion-option>Sweden</ion-option>
+          <ion-option>Switzerland</ion-option>
+          <ion-option>Syria</ion-option>
+          <ion-option>Taiwan</ion-option>
+          <ion-option>Tajikistan</ion-option>
+          <ion-option>Tanzania</ion-option>
+          <ion-option>Thailand</ion-option>
+          <ion-option>Togo</ion-option>
+          <ion-option>Tonga</ion-option>
+          <ion-option>Trinidad & Tobago</ion-option>
+          <ion-option>Tunisia</ion-option>
+          <ion-option>Turkey</ion-option>
+          <ion-option>Turkmenistan</ion-option>
+          <ion-option>Tuvalu</ion-option>
+          <ion-option>Uganda</ion-option>
+          <ion-option>Ukraine</ion-option>
+          <ion-option>United Arab Emirates</ion-option>
+          <ion-option>United Kingdom</ion-option>
+          <ion-option>United States</ion-option>
+          <ion-option>Uruguay</ion-option>
+          <ion-option>Uzbekistan</ion-option>
+          <ion-option>Vanuatu</ion-option>
+          <ion-option>Vatican City</ion-option>
+          <ion-option>Venezuela</ion-option>
+          <ion-option>Vietnam</ion-option>
+          <ion-option>Yemen</ion-option>
+          <ion-option>Zambia</ion-option>
+          <ion-option>Zimbabwe</ion-option>
+        </ion-select>
       </ion-item>
     </ion-list>
-      <h3>Languages</h3>
-      <ion-list>
+    <h3>Current Location</h3>
+    <ion-list>
       <ion-item>
-        <ion-label floating>Preferred Language</ion-label>
-        <ion-select color="light" [(ngModel)]="form.plang" name="plang">
-          <ion-option value="english">English</ion-option>
-          <ion-option value="spanish">Spanish</ion-option>
-          <ion-option value="french">French</ion-option>
-          <ion-option value="arabic">Arabic</ion-option>
-          <ion-option value="mandarin">Mandarin</ion-option>
-          <ion-option value="hindi">Hindi</ion-option>
+        <ion-label floating>City</ion-label>
+        <ion-input type="text" #city required [(ngModel)]="form.city" name="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>State</ion-label>
+        <ion-select [(ngModel)]="form.state" name="state">
+          <ion-option>Alabama</ion-option>
+          <ion-option>Alaska</ion-option>
+          <ion-option>Arizona</ion-option>
+          <ion-option>Arkansas</ion-option>
+          <ion-option>California</ion-option>
+          <ion-option>Colorado</ion-option>
+          <ion-option>Connecticut</ion-option>
+          <ion-option>Delaware</ion-option>
+          <ion-option>Florida</ion-option>
+          <ion-option>Georgia</ion-option>
+          <ion-option>Hawaii</ion-option>
+          <ion-option>Idaho</ion-option>
+          <ion-option>Illinois</ion-option>
+          <ion-option>Indiana</ion-option>
+          <ion-option>Iowa</ion-option>
+          <ion-option>Kansas</ion-option>
+          <ion-option>Kentucky</ion-option>
+          <ion-option>Louisiana</ion-option>
+          <ion-option>Maine</ion-option>
+          <ion-option>Maryland</ion-option>
+          <ion-option>Massachusetts</ion-option>
+          <ion-option>Michigan</ion-option>
+          <ion-option>Minnesota</ion-option>
+          <ion-option>Mississippi</ion-option>
+          <ion-option>Missouri</ion-option>
+          <ion-option>Montana</ion-option>
+          <ion-option>Nebraska</ion-option>
+          <ion-option>Nevada</ion-option>
+          <ion-option>New Hampshire</ion-option>
+          <ion-option>New Jersey</ion-option>
+          <ion-option>New Mexico</ion-option>
+          <ion-option>New York</ion-option>
+          <ion-option>North Carolina</ion-option>
+          <ion-option>North Dakota</ion-option>
+          <ion-option>Ohio</ion-option>
+          <ion-option>Oklahoma</ion-option>
+          <ion-option>Oregon</ion-option>
+          <ion-option>Pennsylvania</ion-option>
+          <ion-option>Rhode Island</ion-option>
+          <ion-option>South Carolina</ion-option>
+          <ion-option>South Dakota</ion-option>
+          <ion-option>Tennessee</ion-option>
+          <ion-option>Texas</ion-option>
+          <ion-option>Utah</ion-option>
+          <ion-option>Vermont</ion-option>
+          <ion-option>Virginia</ion-option>
+          <ion-option>Washington</ion-option>
+          <ion-option>West Virginia</ion-option>
+          <ion-option>Wisconsin</ion-option>
+          <ion-option>Wyoming</ion-option>
         </ion-select>
-      </ion-item> 
+      </ion-item>
       <ion-item>
+        <ion-label floating>Zip</ion-label>
+        <ion-input type="number" #zip required [(ngModel)]="form.zip" name="zip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Years in Residence</ion-label>
+        <ion-input type="number" #locationYears required [(ngModel)]="form.locationYears" name="locationYears"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Years Worked</ion-label>
+        <ion-input type="number" #yearsWorked required [(ngModel)]="form.yearsWorked" name="yearsWorked"></ion-input>
+      </ion-item>
+    </ion-list>
+    <h3>Languages</h3>
+    <h5>Preferred Language</h5>
+    <ion-item>
+      <ion-select color="light" [(ngModel)]="form.plang" name="plang">
+        <ion-option value="english">English</ion-option>
+        <ion-option value="spanish">Spanish</ion-option>
+        <ion-option value="french">French</ion-option>
+        <ion-option value="arabic">Arabic</ion-option>
+        <ion-option value="mandarin">Mandarin</ion-option>
+        <ion-option value="hindi">Hindi</ion-option>
+      </ion-select>
+    </ion-item>
+    <h5>Other Languages</h5>
+    <ion-list>
+      <ion-item *ngIf="form.plang != 'english'">
         <ion-label>English</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.English" name="English"></ion-checkbox>
       </ion-item>
-
-      <ion-item>
+      <ion-item *ngIf="form.plang != 'spanish'">
         <ion-label>Spanish</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.Spanish" name="Spanish"></ion-checkbox>
       </ion-item>
-
-      <ion-item>
+      <ion-item *ngIf="form.plang != 'french'">
         <ion-label>French</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.French" name="French"></ion-checkbox>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="form.plang != 'arabic'">
         <ion-label>Arabic</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.Arabic" name="Arabic"></ion-checkbox>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="form.plang != 'mandarin'">
         <ion-label>Mandarin</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.Mandarin" name="Mandarin"></ion-checkbox>
       </ion-item>
-      <ion-item>
+      <ion-item *ngIf="form.plang != 'hindi'">
         <ion-label>Hindi</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.Hindi" name="Hindi"></ion-checkbox>
       </ion-item>
     </ion-list>
-      <!-- <h3>Job Category</h3>
-      <ion-item>
-        <ion-label>Accounting/Finance/Banking</ion-label>
-        <ion-checkbox color="light" [(ngModel)]="form.bank" name="bank"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Manufacturing</ion-label>
-        <ion-checkbox color="light" [(ngModel)]="form.Manufacturing" name="Manufacturing"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Information Technology</ion-label>
-        <ion-checkbox color="light" [(ngModel)]="form.it" name="it"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Carpentry</ion-label>
-        <ion-checkbox color="light" [(ngModel)]="form.Carpentry" name="Carpentry"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label>Landscaping</ion-label>
-        <ion-checkbox color="light" [(ngModel)]="form.Landscaping" name="Landscaping"></ion-checkbox>
-      </ion-item> -->
-      <h3>Employment Eligibility</h3>
-      <ion-list>
+    <h3>Employment Eligibility</h3>
+    <ion-list>
       <ion-item>
         <ion-label>Have H1B</ion-label>
         <ion-checkbox color="light" [(ngModel)]="form.h1b1" name="h1b1"></ion-checkbox>
