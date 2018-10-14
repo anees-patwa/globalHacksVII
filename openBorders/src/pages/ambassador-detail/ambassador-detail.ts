@@ -14,8 +14,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'ambassador-detail.html',
 })
 export class AmbassadorDetailPage {
+  email;
+  ambassador;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.ambassador = navParams.data;
+    console.log(this.ambassador);
+    this.email = "mailto::" + this.ambassador.email;
   }
 
   ionViewDidLoad() {

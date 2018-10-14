@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
+import { AmbassadorDetailPage } from '../ambassador-detail/ambassador-detail';
 /**
  * Generated class for the AmbassadorListPage page.
  *
@@ -24,10 +25,16 @@ export class AmbassadorListPage {
       this.ambassadors = snapshotToArray(resp);
     }).then(() => this.ambassadors = this.ambassadors.filter(function (item) {
       return item.ambassador != false;
-    }));
+    })).then(() => console.log(this.ambassadors));
 
 
     console.log('ionViewDidLoad AmbassadorListPage');
+  }
+
+  getAmbassadorDetail(ambassador) {
+    //push another page onto the history stack
+    //causing the nav controller to animate the new page in
+    this.navCtrl.push(AmbassadorDetailPage, ambassador);
   }
 
 }
