@@ -60,6 +60,7 @@ export class CompanyloginPage {
         displayName: "company",
         photoURL: "",
       });
+      let uid = firebase.auth().currentUser.uid;
       let username = this.form.username;
       let size = this.form.size;
       let location = this.form.location;
@@ -98,7 +99,7 @@ export class CompanyloginPage {
         languages.push("hindi");
       }
 
-      firebase.database().ref("companies/" + email).set({
+      firebase.database().ref("companies/" + uid).set({
         id: username,
         city: city,
         "company size": size,
