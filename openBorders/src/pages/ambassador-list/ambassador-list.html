@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ambassador-list</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ambassadors</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card *ngFor="let ambassador of ambassadors" (click)="getAmbassadorDetail(ambassador)">
+    <ion-item>
+      <h2>Ambassador {{ambassador.id}}</h2>
+      <ion-card-content>Preferred Language: {{candidate.preferredLang}}</ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="globe"></ion-icon>
+          <span>{{candidate.origin}}</span>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="ribbon"></ion-icon>
+          <span>{{candidate.skills.length}} Skills</span>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="chatbubbles"></ion-icon>
+          <span>{{candidate.languages.length + 1}} Languages</span>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
 </ion-content>

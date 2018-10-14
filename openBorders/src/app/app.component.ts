@@ -12,6 +12,8 @@ import { CompanyListPage } from '../pages/company-list/company-list';
 import { HomeTempPage } from '../pages/home-temp/home-temp';
 import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate';
 import { PopoverPage } from '../pages/popover/popover';
+import { AmbassadorListPage } from '../pages/ambassador-list/ambassador-list';
+import { AmbassadorDetailPage } from '../pages/ambassador-detail/ambassador-detail';
 
 // import { CandidateListPage } from '../pages/candidate-list/candidate-list';
 // import { CompanyloginPage } from '../pages/companylogin/companylogin';
@@ -59,10 +61,11 @@ export class MyApp {
       { title: 'Candidates', component: CandidateListPage },
       { title: 'CompanyLogin', component: CompanyloginPage },
       { title: 'PersonLogin', component: PersonloginPage },
-      { title: 'HomeTemplate', component: HomeTempPage},
-      { title: 'FilterCandidate', component: FilterCandidatePage},
+      { title: 'HomeTemplate', component: HomeTempPage },
+      { title: 'FilterCandidate', component: FilterCandidatePage },
       { title: 'Companies', component: CompanyListPage },
-      { title: 'popOver', component: PopoverPage}
+      { title: 'popOver', component: PopoverPage },
+      { title: 'Ambassadors', component: AmbassadorListPage }
     ];
     this.populatePages();
 
@@ -103,20 +106,22 @@ export class MyApp {
     // { title: 'Companies', component: CompanyListPage }
 
     if (firebase.auth().currentUser) {
-      if(firebase.auth().currentUser.displayName == "person") {
+      if (firebase.auth().currentUser.displayName == "person") {
         //this.pages.push({ title: 'Companies', component: CompanyListPage });
-        this.pages.push({ title: 'Companies', component: FilterCandidatePage});
+        this.pages.push({ title: 'Companies', component: FilterCandidatePage });
+        this.pages.push({ title: 'Ambassadors', component: AmbassadorListPage });
       } else {
-        this.pages.push({ title: 'Candidates', component: HomeTempPage});
-      } 
+        this.pages.push({ title: 'Candidates', component: HomeTempPage });
 
-      
+      }
+
+
       //this.pages.push({ title: 'Messages', component: MessagesPage });
-      this.pages.push({ title: 'Sign Out', component: SignoutPage});
+      this.pages.push({ title: 'Sign Out', component: SignoutPage });
     } else {
       this.pages.push({ title: 'Login', component: PersonSignupPage });
     }
-    
+
     console.log(this.pages);
   }
 }
