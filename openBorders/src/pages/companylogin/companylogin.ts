@@ -73,7 +73,7 @@ export class CompanyloginPage {
         let industry = form.industry;
         let h1b1 = form.h1b1;
         let h1b2 = form.h1b2;
-  
+
         let visas = [];
         if (h1b1) {
           visas.push("H1B");
@@ -81,7 +81,7 @@ export class CompanyloginPage {
         if (h1b2) {
           visas.push("H2B");
         }
-  
+
         let languages = [];
         if (form.English) {
           languages.push("english");
@@ -101,7 +101,7 @@ export class CompanyloginPage {
         if (form.Hindi) {
           languages.push("hindi");
         }
-  
+
         firebase.database().ref("companies/" + uid).set({
           id: username,
           city: city,
@@ -118,9 +118,9 @@ export class CompanyloginPage {
           page.events.publish("user:login");
           page.navCtrl.setRoot(HomeTempPage);
         });
-  
+
       });
-      
+
     })
 
   }
