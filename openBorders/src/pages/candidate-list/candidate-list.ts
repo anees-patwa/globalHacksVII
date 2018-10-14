@@ -47,6 +47,25 @@ export const snapshotToArray = (snapshot, filter) => {
   snapshot.forEach(childSnapshot => {
     let item = childSnapshot.val();
 
+    if (filter.exp) {
+
+      if (!item.workexp) {
+        return false;
+      }
+      
+      var workexp = parseInt(item.workexp);
+
+      if (isNaN(workexp)) {
+        return false;
+      }
+
+      console.log(workexp);
+
+      if (parseInt(filter.exp) >= workexp) {
+        return false;
+      }
+    }
+
     if (filter.language) {
       var languageMatch = false;
 
