@@ -18,6 +18,7 @@ import { PopoverPage } from '../pages/popover/popover';
 // import { PersonloginPage } from '../pages/personlogin/personlogin';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
+import { EditUserInfoPage } from '../pages/edit-user-info/edit-user-info';
 
 
 //import { CompanyListPage } from '../pages/company-list/company-list';
@@ -62,7 +63,8 @@ export class MyApp {
       { title: 'HomeTemplate', component: HomeTempPage},
       { title: 'FilterCandidate', component: FilterCandidatePage},
       { title: 'Companies', component: CompanyListPage },
-      { title: 'popOver', component: PopoverPage}
+      { title: 'popOver', component: PopoverPage},
+      { title: 'editUser', component: EditUserInfoPage}
     ];
     this.populatePages();
 
@@ -108,15 +110,16 @@ export class MyApp {
         this.pages.push({ title: 'Companies', component: FilterCandidatePage});
       } else {
         this.pages.push({ title: 'Candidates', component: HomeTempPage});
-      } 
+      }
 
-      
+
       //this.pages.push({ title: 'Messages', component: MessagesPage });
       this.pages.push({ title: 'Sign Out', component: SignoutPage});
     } else {
       this.pages.push({ title: 'Login', component: PersonSignupPage });
+      this.pages.push({ title: 'Edit User', component: EditUserInfoPage});
     }
-    
+
     console.log(this.pages);
   }
 }

@@ -27,6 +27,7 @@ import { FilterCandidatePage } from '../pages/filter-candidate/filter-candidate'
 import { PopoverPage } from '../pages/popover/popover';
 
 import { PersonSignupPage } from '../pages/person-signup/person-signup';
+import { EditUserInfoPage } from '../pages/edit-user-info/edit-user-info';
 
 import { SignoutPage } from '../pages/signout/signout';
 
@@ -48,7 +49,8 @@ import { SignoutPage } from '../pages/signout/signout';
     CompanyListPage,
     PersonSignupPage,
     SignoutPage,
-    PopoverPage
+    PopoverPage,
+    EditUserInfoPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { SignoutPage } from '../pages/signout/signout';
     CompanyListPage,
     PersonSignupPage,
     SignoutPage,
-    PopoverPage
+    PopoverPage,
+    EditUserInfoPage
   ],
   providers: [
     StatusBar,
